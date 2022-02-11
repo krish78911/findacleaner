@@ -1,6 +1,6 @@
 body .navigation {
     margin-bottom: 10px;
-    border: 1px outset #c5c5c5;
+    background-color: #DFCFBE;
 }
 body .navigation nav {
     font-size: 18px;
@@ -16,20 +16,20 @@ body table {
     width: 100%;
 }
 body table td, body table th {
-    border: 1px outset #c5c5c5;
+    border: 1px outset black;
     padding: 5px;
 }
 body .advertiseForm {
-    border: 1px outset #c5c5c5;
+    border: 1px outset black;
+}
+body .advertiseForm label {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
 }
 body .advertiseForm form {
     padding: 10px;
     width: 100%;
-}
-body .advertiseForm form label {
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
 }
 body .advertiseForm form input, body .advertiseForm form select, body .advertiseForm form button {
     width: 100%;
@@ -37,10 +37,13 @@ body .advertiseForm form input, body .advertiseForm form select, body .advertise
     margin-bottom: 5px;
 }
 body .advertiseForm form button {
-    background-color: orange;
+    background-color: #DFCFBE;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 body .footer {
     height: 200px;
-    border: 1px outset #c5c5c5;
+    background-color: #DFCFBE;
     margin-top: 10px;
 }

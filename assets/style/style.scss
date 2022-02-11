@@ -1,12 +1,13 @@
-$backgroundColor: orange;
+$backgroundColor: #DFCFBE;
 $textColor: black;
 $fontSize: 24px;
-$border: rgb(197, 197, 197);
+$border: black;
 
 body {
     .navigation {
         margin-bottom: 10px;
-        border: 1px outset $border;
+
+        background-color: $backgroundColor;
         nav {
             font-size: 18px;
             padding: 10px;
@@ -28,14 +29,14 @@ body {
 
     .advertiseForm {
         border: 1px outset $border;
+        label {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+        }
         form {
             padding: 10px;
             width: 100%;
-            label {
-                width: 100%;
-                text-align: center;
-                font-size: 24px;
-            }
             input, select, button {
                 width: 100%;
                 padding: 10px;
@@ -43,13 +44,15 @@ body {
             }
             button {
                 background-color: $backgroundColor;
+                border: none;
+                font-size: 18px; font-weight: bold;;
             }
         }
     }
 
     .footer {
         height: 200px;
-        border: 1px outset $border;
+        background-color: $backgroundColor;
         margin-top: 10px;
     }
 }
