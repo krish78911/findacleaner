@@ -3,6 +3,19 @@ $textColor: black;
 $fontSize: 24px;
 $border: black;
 
+@mixin form-style {
+    input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+    button {
+        background-color: $backgroundColor;
+        border: none;
+        font-size: 18px; font-weight: bold;;
+    }
+}
+
 body {
     .navigation {
         margin-bottom: 10px;
@@ -19,15 +32,20 @@ body {
             }
         }
     }
-    table {
+    .cleanerTableAdmin {
         width: 100%;
-        td, th {
+        tr {
             border: 1px outset $border;
+        }
+        td, th {
             padding: 5px;
+        }
+        span {
+            cursor: pointer;
         }
     } 
 
-    .advertiseForm {
+    .advertisementForm {
         border: 1px outset $border;
         label {
             width: 100%;
@@ -35,18 +53,27 @@ body {
             font-size: 24px;
         }
         form {
-            padding: 10px;
+            padding: 5px;
             width: 100%;
-            input, select, button {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 5px;
-            }
-            button {
-                background-color: $backgroundColor;
-                border: none;
-                font-size: 18px; font-weight: bold;;
-            }
+            @include form-style;
+        }
+    }
+    
+    .editForm {
+        @include form-style;
+    }
+
+    .aboutus {
+        margin-top: 10px;
+        .heading {
+            font-size: 24px;
+            text-align: center;;
+        }
+    }
+
+    .getCleanersAndPrices {
+        form {
+            @include form-style;
         }
     }
 
@@ -55,4 +82,29 @@ body {
         background-color: $backgroundColor;
         margin-top: 10px;
     }
+
+    // UI
+    .search {
+        border: 1px outset $border;
+        label {
+            width: 100%;
+            font-size: 24px;
+        }
+        #searchForm {
+            padding: 5px;
+            width: 100%;
+            @include form-style();
+        }
+    }
+    .cleanerTableUser {
+        width: 100%;
+        
+        td, th {
+            border: 1px outset $border;
+            padding: 5px;
+        }
+        span {
+            cursor: pointer;
+        }
+    } 
 }

@@ -12,31 +12,65 @@ body .navigation nav a {
     padding: 10px;
     color: black;
 }
-body table {
+body .cleanerTableAdmin {
     width: 100%;
 }
-body table td, body table th {
+body .cleanerTableAdmin tr {
     border: 1px outset black;
+}
+body .cleanerTableAdmin td, body .cleanerTableAdmin th {
     padding: 5px;
 }
-body .advertiseForm {
+body .cleanerTableAdmin span {
+    cursor: pointer;
+}
+body .advertisementForm {
     border: 1px outset black;
 }
-body .advertiseForm label {
+body .advertisementForm label {
     width: 100%;
     text-align: center;
     font-size: 24px;
 }
-body .advertiseForm form {
-    padding: 10px;
+body .advertisementForm form {
+    padding: 5px;
     width: 100%;
 }
-body .advertiseForm form input, body .advertiseForm form select, body .advertiseForm form button {
+body .advertisementForm form input, body .advertisementForm form select, body .advertisementForm form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
 }
-body .advertiseForm form button {
+body .advertisementForm form button {
+    background-color: #DFCFBE;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+body .editForm input, body .editForm select, body .editForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+body .editForm button {
+    background-color: #DFCFBE;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+body .aboutus {
+    margin-top: 10px;
+}
+body .aboutus .heading {
+    font-size: 24px;
+    text-align: center;
+}
+body .getCleanersAndPrices form input, body .getCleanersAndPrices form select, body .getCleanersAndPrices form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+body .getCleanersAndPrices form button {
     background-color: #DFCFBE;
     border: none;
     font-size: 18px;
@@ -46,4 +80,37 @@ body .footer {
     height: 200px;
     background-color: #DFCFBE;
     margin-top: 10px;
+}
+body .search {
+    border: 1px outset black;
+}
+body .search label {
+    width: 100%;
+    font-size: 24px;
+}
+body .search #searchForm {
+    padding: 5px;
+    width: 100%;
+}
+body .search #searchForm input, body .search #searchForm select, body .search #searchForm button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+body .search #searchForm button {
+    background-color: #DFCFBE;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+body .cleanerTableUser {
+    width: 100%;
+}
+body .cleanerTableUser td, body .cleanerTableUser th {
+    border-radius: 10px;
+    border: 1px outset black;
+    padding: 5px;
+}
+body .cleanerTableUser span {
+    cursor: pointer;
 }
