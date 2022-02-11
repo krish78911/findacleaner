@@ -1,0 +1,55 @@
+$backgroundColor: orange;
+$textColor: black;
+$fontSize: 24px;
+$border: rgb(197, 197, 197);
+
+body {
+    .navigation {
+        margin-bottom: 10px;
+        border: 1px outset $border;
+        nav {
+            font-size: 18px;
+            padding: 10px;
+            a {
+                text-decoration:  none;
+                font-weight: bold;
+                padding: 10px;
+                color: $textColor;
+            }
+        }
+    }
+    table {
+        width: 100%;
+        td, th {
+            border: 1px outset $border;
+            padding: 5px;
+        }
+    } 
+
+    .advertiseForm {
+        border: 1px outset $border;
+        form {
+            padding: 10px;
+            width: 100%;
+            label {
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+            }
+            input, select, button {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 5px;
+            }
+            button {
+                background-color: $backgroundColor;
+            }
+        }
+    }
+
+    .footer {
+        height: 200px;
+        border: 1px outset $border;
+        margin-top: 10px;
+    }
+}

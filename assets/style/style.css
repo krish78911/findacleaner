@@ -1,0 +1,46 @@
+body .navigation {
+    margin-bottom: 10px;
+    border: 1px outset #c5c5c5;
+}
+body .navigation nav {
+    font-size: 18px;
+    padding: 10px;
+}
+body .navigation nav a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    color: black;
+}
+body table {
+    width: 100%;
+}
+body table td, body table th {
+    border: 1px outset #c5c5c5;
+    padding: 5px;
+}
+body .advertiseForm {
+    border: 1px outset #c5c5c5;
+}
+body .advertiseForm form {
+    padding: 10px;
+    width: 100%;
+}
+body .advertiseForm form label {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+}
+body .advertiseForm form input, body .advertiseForm form select, body .advertiseForm form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+body .advertiseForm form button {
+    background-color: orange;
+}
+body .footer {
+    height: 200px;
+    border: 1px outset #c5c5c5;
+    margin-top: 10px;
+}
