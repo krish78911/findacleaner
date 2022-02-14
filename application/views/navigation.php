@@ -5,7 +5,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<nav>
-							<a>LOGO</a>
+							<a id="logo"><span class="pinkColor">CLEANER</span> <span class="greenColor">FINDER</span></a>
                             <a>Login</a>
 						</nav>
 					</div>

@@ -2,6 +2,8 @@ $backgroundColor: #DFCFBE;
 $textColor: black;
 $fontSize: 24px;
 $border: black;
+$logoGreen: #AAC551;
+$logoPink: #CE2DA7;
 
 @mixin form-style {
     input, select, button {
@@ -19,11 +21,20 @@ $border: black;
 body {
     .navigation {
         margin-bottom: 10px;
-
         background-color: $backgroundColor;
+        padding: 10px;
         nav {
             font-size: 18px;
-            padding: 10px;
+            a#logo {
+                background-color: black;
+                color: $backgroundColor;
+                span.greenColor {
+                    color: $logoGreen;
+                }
+                span.pinkColor {
+                    color: $logoPink;
+                }
+            }
             a {
                 text-decoration:  none;
                 font-weight: bold;
@@ -84,13 +95,21 @@ body {
     }
 
     // UI
+    .slider {
+        #sliderImage {
+            background-image: url('../images/banner-inner01.jpg');
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+    }
     .search {
-        border: 1px outset $border;
         label {
             width: 100%;
             font-size: 24px;
         }
         #searchForm {
+            border: 1px outset $border;
             padding: 5px;
             width: 100%;
             @include form-style();
@@ -98,7 +117,10 @@ body {
     }
     .cleanerTableUser {
         width: 100%;
-        
+        th {
+            background-color: black;
+            color: white;
+        }
         td, th {
             border: 1px outset $border;
             padding: 5px;

@@ -1,10 +1,20 @@
 body .navigation {
     margin-bottom: 10px;
     background-color: #DFCFBE;
+    padding: 10px;
 }
 body .navigation nav {
     font-size: 18px;
-    padding: 10px;
+}
+body .navigation nav a#logo {
+    background-color: black;
+    color: #DFCFBE;
+}
+body .navigation nav a#logo span.greenColor {
+    color: #AAC551;
+}
+body .navigation nav a#logo span.pinkColor {
+    color: #CE2DA7;
 }
 body .navigation nav a {
     text-decoration: none;
@@ -81,14 +91,18 @@ body .footer {
     background-color: #DFCFBE;
     margin-top: 10px;
 }
-body .search {
-    border: 1px outset black;
+body .slider #sliderImage {
+    background-image: url("../images/banner-inner01.jpg");
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
 }
 body .search label {
     width: 100%;
     font-size: 24px;
 }
 body .search #searchForm {
+    border: 1px outset black;
     padding: 5px;
     width: 100%;
 }
@@ -106,8 +120,11 @@ body .search #searchForm button {
 body .cleanerTableUser {
     width: 100%;
 }
+body .cleanerTableUser th {
+    background-color: black;
+    color: white;
+}
 body .cleanerTableUser td, body .cleanerTableUser th {
-    border-radius: 10px;
     border: 1px outset black;
     padding: 5px;
 }

@@ -10,8 +10,17 @@ class Admin extends BaseController {
 
     public function __construct() {
         parent::__construct();
+
+        session_start();
+        if (!isset($_SESSION['username']) && empty($_SESSION['username'])) {
+            header("Location: " . base_url('Admin/login'));
+        }
         // load models
         $this->load->model('Cleaners');
+    }
+
+    public function login() {
+        echo "test";
     }
 
     public function index() {

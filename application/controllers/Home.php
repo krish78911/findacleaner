@@ -18,6 +18,7 @@ class Home extends BaseController {
         $this->data['cleaners'] = $this->Cleaners->search();
         $this->load->view('head');
         $this->load->view('navigation');
+        $this->load->view('slider');
         $this->load->view('home', $this->data);
         $this->load->view('about');
         $this->load->view('footer');   
