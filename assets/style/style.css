@@ -1,14 +1,14 @@
 body .navigation {
     margin-bottom: 10px;
-    background-color: #DFCFBE;
-    padding: 10px;
+    border-bottom: 5px solid #DFCFBE;
 }
 body .navigation nav {
     font-size: 18px;
 }
 body .navigation nav a#logo {
-    background-color: black;
     color: #DFCFBE;
+    font-size: 24px;
+    padding: 0px;
 }
 body .navigation nav a#logo span.greenColor {
     color: #AAC551;
@@ -21,6 +21,7 @@ body .navigation nav a {
     font-weight: bold;
     padding: 10px;
     color: black;
+    text-decoration: underline;
 }
 body .cleanerTableAdmin {
     width: 100%;
@@ -52,7 +53,8 @@ body .advertisementForm form input, body .advertisementForm form select, body .a
     margin-bottom: 5px;
 }
 body .advertisementForm form button {
-    background-color: #DFCFBE;
+    background-color: #AAC551;
+    color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
@@ -63,7 +65,8 @@ body .editForm input, body .editForm select, body .editForm button {
     margin-bottom: 5px;
 }
 body .editForm button {
-    background-color: #DFCFBE;
+    background-color: #AAC551;
+    color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
@@ -81,7 +84,8 @@ body .getCleanersAndPrices form input, body .getCleanersAndPrices form select, b
     margin-bottom: 5px;
 }
 body .getCleanersAndPrices form button {
-    background-color: #DFCFBE;
+    background-color: #AAC551;
+    color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
@@ -94,8 +98,13 @@ body .footer {
 body .slider #sliderImage {
     background-image: url("../images/banner-inner01.jpg");
     width: 100%;
-    height: 200px;
     margin-bottom: 10px;
+    font-size: 30px;
+    text-align: left;
+    text-shadow: 2px 2px 5px black;
+    color: white;
+    padding: 20px;
+    font-family: "Helvetica";
 }
 body .search label {
     width: 100%;
@@ -112,22 +121,31 @@ body .search #searchForm input, body .search #searchForm select, body .search #s
     margin-bottom: 5px;
 }
 body .search #searchForm button {
-    background-color: #DFCFBE;
+    background-color: #AAC551;
+    color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
 }
 body .cleanerTableUser {
     width: 100%;
+    border: 1px outset black;
+}
+body .cleanerTableUser tr {
+    border: 1px outset black;
 }
 body .cleanerTableUser th {
-    background-color: black;
+    background-color: #AAC551;
     color: white;
 }
 body .cleanerTableUser td, body .cleanerTableUser th {
-    border: 1px outset black;
     padding: 5px;
+    vertical-align: top;
 }
 body .cleanerTableUser span {
     cursor: pointer;
+}
+body .cleanerTableUser span.totalPrice {
+    font-size: 25px;
+    font-weight: bold;
 }

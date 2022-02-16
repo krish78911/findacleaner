@@ -6,9 +6,7 @@
 		</div>
 
 		<!--Add form-->
-		<div class="col-md-5 col-lg-4 advertisementForm">
-			<?php include 'advertiseForm.php'; ?>
-		</div>
+		<?php include 'advertiseForm.php'; ?>
 	</div>
 </div>
 

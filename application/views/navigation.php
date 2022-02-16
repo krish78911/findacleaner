@@ -7,6 +7,7 @@
 						<nav>
 							<a id="logo"><span class="pinkColor">CLEANER</span> <span class="greenColor">FINDER</span></a>
                             <a>Login</a>
+							<a href="<?php echo base_url('Register/') ?>">Advertise Yourself</a>
 						</nav>
 					</div>
 				</div>

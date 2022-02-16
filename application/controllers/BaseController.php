@@ -19,5 +19,15 @@ class BaseController extends CI_Controller {
         $this->load->library(array('upload', 'image_lib', 'calendar', 'email', 'pagination', 'unit_test')); //load necessary libraries
         $this->load->database();
         $this->load->helper(array('url', 'form', 'html', 'directory', 'file')); //load necessary helpers
+
+        /*
+            SEND EMAIL
+            PAGINATION
+            LOGIN
+            LOGOUT
+            STYLING
+            REGISTER (check if username exists)
+            ON USER DELETE logout
+        */
     }
 }

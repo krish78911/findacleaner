@@ -29,10 +29,17 @@ class Home extends BaseController {
         $this->vacuuming = $this->input->post('vacuuming');
         $this->moping = $this->input->post('moping');
         $this->meterSquare = $this->input->post('metersquare');
-        $this->kitchenCleaning = $this->input->post('kitchenCleaning');
-        $this->bathroomCleaning = $this->input->post('BathroomCleaning');
+        $this->kitchenCleaning = $this->input->post('kitchencleaning');
+        $this->bathroomCleaning = $this->input->post('bathroomcleaning');
 
         $this->data['cleaners'] = $this->Cleaners->search();
-        $this->load->view('getCleanersAndPrices', $this->data, $this->meterSquare);   
+        $this->load->view('getCleanersAndPrices'
+            , $this->data
+            , $this->vacuuming
+            , $this->moping
+            , $this->meterSquare
+            , $this->kitchenCleaning
+            , $this->bathroomCleaning
+        );   
     }
 }
