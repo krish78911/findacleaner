@@ -7,6 +7,11 @@
 		<input type="number" name="phone" placeholder="Phone" required />
 		<input type="text" name="city" placeholder="City" required />
 		<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" required />
+		<select name="moping" required>
+			<option value="">Moping ? </option>
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
 		<input type="number" name="mopingpricepermeter" placeholder="Moping Price Per Meter (eg. 2)" required />
 		<select name="bathroomcleaning" required>
 			<option value="">Bathroom Cleaning ? </option>

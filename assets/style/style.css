@@ -1,3 +1,6 @@
+body .displayNone {
+    display: none;
+}
 body .navigation {
     margin-bottom: 10px;
     border-bottom: 5px solid #DFCFBE;
@@ -121,6 +124,18 @@ body .search #searchForm input, body .search #searchForm select, body .search #s
     margin-bottom: 5px;
 }
 body .search #searchForm button {
+    background-color: #AAC551;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+body .modal input, body .modal select, body .modal button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+body .modal button {
     background-color: #AAC551;
     color: white;
     border: none;

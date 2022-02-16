@@ -14,6 +14,11 @@
 		value="<?php echo $val->city ?>" required />
 	<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" 
 		value="<?php echo $val->vcpricepermeter ?>" required />
+	<select name="moping" required>
+		<option value="">Moping ? </option>
+		<option value="Yes" <?php echo ($val->moping == 'Yes') ? 'selected' : ''; ?>>Yes</option>
+		<option value="No"  <?php echo ($val->moping == 'No') ? 'selected' : ''; ?>>No</option>
+	</select>
 	<input type="number" name="mopingpricepermeter" placeholder="Moping Price Per Meter (eg. 2)" 
 		value="<?php echo $val->mopingpricepermeter ?>" required />
 	<select name="bathroomcleaning" required>

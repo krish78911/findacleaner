@@ -20,6 +20,9 @@ $logoPink: #CE2DA7;
 }
 
 body {
+    .displayNone {
+        display: none;
+    }
     .navigation {
         margin-bottom: 10px;
         // background-color: $backgroundColor;
@@ -124,6 +127,9 @@ body {
             width: 100%;
             @include form-style();
         }
+    }
+    .modal {
+        @include form-style();
     }
     .cleanerTableUser {
         width: 100%;

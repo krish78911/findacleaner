@@ -21,11 +21,14 @@ class BaseController extends CI_Controller {
         $this->load->helper(array('url', 'form', 'html', 'directory', 'file')); //load necessary helpers
 
         /*
-            SEND EMAIL
+            SEARCH CONDITION FOR PRICE
+            IF KITCHEN OR BATHROOM CLEANING THEN ONLY PUT PRICE
+            -SEND EMAIL
             PAGINATION
             LOGIN
             LOGOUT
             STYLING
+            
             REGISTER (check if username exists)
             ON USER DELETE logout
         */

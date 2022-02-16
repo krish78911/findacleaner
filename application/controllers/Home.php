@@ -25,21 +25,23 @@ class Home extends BaseController {
     }
 
     public function findCleaners() {
+        $postData = $this->input->post();
         $this->city = $this->input->post('city');
-        $this->vacuuming = $this->input->post('vacuuming');
-        $this->moping = $this->input->post('moping');
-        $this->meterSquare = $this->input->post('metersquare');
-        $this->kitchenCleaning = $this->input->post('kitchencleaning');
-        $this->bathroomCleaning = $this->input->post('bathroomcleaning');
+        $this->vacuuming = $postData['vacuuming'];
+        $this->moping = $postData['moping'];
+        $this->metersquare = $postData['metersquare'];
+        $this->kitchencleaning = $postData['kitchencleaning'];
+        $this->bathroomcleaning = $postData['bathroomcleaning'];
 
-        $this->data['cleaners'] = $this->Cleaners->search();
+        echo $postData['bathroomcleaning'];
+        $this->data['cleaners'] = $this->Cleaners->searchWhere($postData);
         $this->load->view('getCleanersAndPrices'
             , $this->data
             , $this->vacuuming
             , $this->moping
-            , $this->meterSquare
-            , $this->kitchenCleaning
-            , $this->bathroomCleaning
+            , $this->metersquare
+            , $this->kitchencleaning
+            , $this->bathroomcleaning
         );   
     }
 }

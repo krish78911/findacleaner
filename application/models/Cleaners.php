@@ -15,6 +15,24 @@ class Cleaners extends CI_Model {
         return $query->result();
     }
 
+    function searchWhere($postData) {
+        $this->db->select('*');
+        $this->db->from('cleaner');
+        $this->db->where('city', $postData['city']);
+        if($postData['moping'] == 'Yes') {
+            $this->db->where('moping', $postData['moping']);
+        }
+        if($postData['bathroomcleaning'] == 'Yes') {
+            $this->db->where('bathroomcleaning', $postData['bathroomcleaning']);
+        }
+        if($postData['kitchencleaning'] == 'Yes') {
+            $this->db->where('kitchencleaning', $postData['kitchencleaning']);
+        }
+        $this->db->order_by("id", "asc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function insert($data) {
         $this->db->insert('cleaner', $data);
     }
