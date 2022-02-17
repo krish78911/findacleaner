@@ -26,6 +26,12 @@ class Admin extends BaseController {
         echo "test";
     }
 
+    public function logout() {
+        session_destroy();
+        $urlRefresh = base_url();
+        header("Refresh: 1; URL=\"" . $urlRefresh . "\""); // redirect in 5 seconds
+    }
+
     public function index() {
         $this->data['cleaners'] = $this->Cleaners->search();
         // var_dump($this->data['cleaners']);
@@ -51,6 +57,7 @@ class Admin extends BaseController {
             'bathroomcleaningprice' => $this->input->post('bathroomcleaningprice'),
             'kitchencleaning' => $this->input->post('kitchencleaning'),
             'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
+            'password' => $this->input->post('password'),
         );
         $this->Cleaners->insert($data);
 
@@ -73,6 +80,7 @@ class Admin extends BaseController {
             'bathroomcleaningprice' => $this->input->post('bathroomcleaningprice'),
             'kitchencleaning' => $this->input->post('kitchencleaning'),
             'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
+            'password' => $this->input->post('password'),
         );
 
         $this->Cleaners->update($data, $id);

@@ -4,6 +4,7 @@
 		<input type="text" name="firstname" placeholder="Firstname" required />
 		<input type="text" name="lastname" placeholder="Lastname" required />
 		<input type="email" name="email" placeholder="Email" required />
+		<input type="text" name="password" placeholder="Password" required />
 		<input type="number" name="phone" placeholder="Phone" required />
 		<input type="text" name="city" placeholder="City" required />
 		<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" required />

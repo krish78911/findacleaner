@@ -8,6 +8,8 @@
 		value="<?php echo $val->lastname ?>" required />
 	<input type="email" name="email" placeholder="Email" 
 		value="<?php echo $val->email ?>" required />
+	<input type="text" name="password" placeholder="Password" 
+		value="<?php echo $val->password ?>" required />
 	<input type="number" name="phone" placeholder="Phone" 
 		value="<?php echo $val->phone ?>" required />
 	<input type="text" name="city" placeholder="City"
