@@ -12,6 +12,7 @@ class Home extends BaseController {
         parent::__construct();
         // load models
         $this->load->model('Cleaners');
+        echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
     }
 
     public function index() {

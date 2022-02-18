@@ -16,6 +16,8 @@ class BaseController extends CI_Controller {
 		
         session_start();
 
+        //echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
+
         $this->load->library(array('upload', 'image_lib', 'calendar', 'email', 'pagination', 'unit_test')); //load necessary libraries
         $this->load->database();
         $this->load->helper(array('url', 'form', 'html', 'directory', 'file')); //load necessary helpers
@@ -23,13 +25,16 @@ class BaseController extends CI_Controller {
         /*
             -SEARCH CONDITION FOR PRICE
             ON EDIT EMAIL AND PASSWORD, MANAGE LOGIN, LOGOUT
+            SHOW MOPING, KITCHEN, BATHROOM PRICE INPUT IF YES SELECTED
             -SEND EMAIL
             PAGINATION
             LOGIN
             -LOGOUT
             STYLING
-            REGISTER (check if username exists)
+            REGISTER (check if username exists), if session exists then submit to admin, else to register
             ON USER DELETE logout
+            PUT LABEL ABOVE FORM INPUTS
+            AJAX WORKS ONLY ONCE ERROR
         */
     }
 }

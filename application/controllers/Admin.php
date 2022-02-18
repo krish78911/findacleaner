@@ -10,14 +10,15 @@ class Admin extends BaseController {
 
     public function __construct() {
         parent::__construct();
-
-        session_start();
         /*
         if (!isset($_SESSION['username']) && empty($_SESSION['username'])) {
             header("Location: " . base_url('Admin/login'));
         }
         */
-        
+        $_SESSION["email"] = 'admin';
+        $_SESSION["password"] = 'admin';
+        $_SESSION["loggedin"] = true;
+        echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
         // load models
         $this->load->model('Cleaners');
     }
@@ -26,43 +27,31 @@ class Admin extends BaseController {
         echo "test";
     }
 
-    public function logout() {
-        session_destroy();
-        $urlRefresh = base_url();
-        header("Refresh: 1; URL=\"" . $urlRefresh . "\""); // redirect in 5 seconds
+    public function index() {
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
+            if($_SESSION["email"] != "admin") {
+                $this->data['cleaners'] = $this->Cleaners->searchWhereUsername($_SESSION["email"]);
+            }
+            else {
+                $this->data['cleaners'] = $this->Cleaners->search();
+            }
+            // var_dump($this->data['cleaners']);
+            $this->load->view('head');
+            $this->load->view('navigation');
+            $this->load->view('admin/body', $this->data);
+            $this->load->view('footer');
+        }
+        
     }
 
-    public function index() {
+    public function admin() {
         $this->data['cleaners'] = $this->Cleaners->search();
+        
         // var_dump($this->data['cleaners']);
         $this->load->view('head');
         $this->load->view('navigation');
         $this->load->view('admin/body', $this->data);
         $this->load->view('footer');
-        
-    }
-
-    public function addAdvertisement() {
-
-        $data = array(
-            'firstname' => $this->input->post('firstname'),
-            'lastname' => $this->input->post('lastname'),
-            'email' => $this->input->post('email'),
-            'phone' => $this->input->post('phone'),
-            'city' => $this->input->post('city'),
-            'vcpricepermeter' => $this->input->post('vcpricepermeter'),
-            'moping' => $this->input->post('moping'),
-            'mopingpricepermeter' => $this->input->post('mopingpricepermeter'),
-            'bathroomcleaning' => $this->input->post('bathroomcleaning'),
-            'bathroomcleaningprice' => $this->input->post('bathroomcleaningprice'),
-            'kitchencleaning' => $this->input->post('kitchencleaning'),
-            'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
-            'password' => $this->input->post('password'),
-        );
-        $this->Cleaners->insert($data);
-
-        $this->data['cleaners'] = $this->Cleaners->search();
-        $this->load->view('admin/allCleaners', $this->data);
     }
 
     public function editAdvertisement() {
@@ -82,7 +71,6 @@ class Admin extends BaseController {
             'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
             'password' => $this->input->post('password'),
         );
-
         $this->Cleaners->update($data, $id);
 
         /*
@@ -100,14 +88,35 @@ class Admin extends BaseController {
         );
         */
 
-        $this->data['cleaners'] = $this->Cleaners->search();
+        if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
+            if($_SESSION["email"] != "admin") {
+                $this->data['cleaners'] = $this->Cleaners->searchWhereUsername($_SESSION["email"]);
+            }
+            else {
+                $this->data['cleaners'] = $this->Cleaners->search();
+            }
+        }
         $this->load->view('admin/allCleaners', $this->data);
     }
 
     public function deleteAdvertisement($id) {
+
         $this->Cleaners->delete($id);
 
-        $this->data['cleaners'] = $this->Cleaners->search();
-        $this->load->view('admin/allCleaners', $this->data);
+        if($this->db->affected_rows() > 0) {
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
+                if($_SESSION["email"] != "admin") {
+                    session_destroy();
+                    $urlRefresh = base_url();
+                    header("Refresh: 1; URL=\"" . $urlRefresh . "\""); // redirect in 5 seconds
+                }
+                else {
+                    $this->data['cleaners'] = $this->Cleaners->search();
+                    $this->load->view('admin/allCleaners', $this->data);
+                }
+            }
+        } else {
+            echo "Error..";
+        }
     }
 }

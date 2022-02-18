@@ -7,9 +7,9 @@
 	<input type="text" name="lastname" placeholder="Lastname" 
 		value="<?php echo $val->lastname ?>" required />
 	<input type="email" name="email" placeholder="Email" 
-		value="<?php echo $val->email ?>" required />
+		value="<?php echo $val->email ?>" class="displayNone" required/>
 	<input type="text" name="password" placeholder="Password" 
-		value="<?php echo $val->password ?>" required />
+		value="<?php echo $val->password ?>" class="displayNone" required/>
 	<input type="number" name="phone" placeholder="Phone" 
 		value="<?php echo $val->phone ?>" required />
 	<input type="text" name="city" placeholder="City"

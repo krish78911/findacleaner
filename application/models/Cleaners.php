@@ -33,6 +33,22 @@ class Cleaners extends CI_Model {
         return $query->result();
     }
 
+    function searchWhereEmail($email) {
+        $this->db->select('*');
+        $this->db->from('cleaner');
+        $this->db->where('email', $email);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function searchWhereUsername($email) {
+        $this->db->select('*');
+        $this->db->from('cleaner');
+        $this->db->where('email', $email);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function insert($data) {
         $this->db->insert('cleaner', $data);
     }

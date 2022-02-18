@@ -1,18 +1,18 @@
 <div class="container">
 	<div class="row">
 		<!-- all cleaner with Edit and Delete-->
-		<div class="col-md-7 col-lg-8 allCleaners">
+		<div class="col-md-12 col-lg-12 allCleaners">
 			<?php include 'allCleaners.php'; ?>
 		</div>
 
 		<!--Add form-->
-		<?php include 'advertiseForm.php'; ?>
+		<?php //include 'advertiseForm.php'; ?>
 	</div>
 </div>
 
 <script>
 	$(document).ready(function () {
-        $("#advertiseForm, .editForm").on('submit', function (e)
+        $("#advertiseFormm, .editForm").on('submit', function (e)
         {
             var postData = $(this).serializeArray();
             var formURL = $(this).attr("action");
