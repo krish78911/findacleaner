@@ -28,7 +28,7 @@ class BaseController extends CI_Controller {
             SHOW MOPING, KITCHEN, BATHROOM PRICE INPUT IF YES SELECTED
             -SEND EMAIL
             PAGINATION
-            LOGIN
+            LOGIN, use newly created login form
             -LOGOUT
             STYLING
             REGISTER (check if username exists), if session exists then submit to admin, else to register
