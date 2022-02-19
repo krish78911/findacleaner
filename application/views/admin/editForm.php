@@ -8,12 +8,12 @@
 	<div class="row">	
 		<div class="col-md-6 col-lg-6">
 			<span>First Name</span>
-			<input type="text" name="firstname" placeholder="Firstname" 
+			<input type="text" name="firstname" placeholder="Firstname" maxlength="50"
 				value="<?php echo $val->firstname ?>" required />
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<span>Last Name</span>
-			<input type="text" name="lastname" placeholder="Lastname" 
+			<input type="text" name="lastname" placeholder="Lastname" maxlength="50" 
 				value="<?php echo $val->lastname ?>" required />
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 	<div class="row">	
 		<div class="col-md-6 col-lg-6">
 			<span>Phone</span>
-			<input type="number" name="phone" placeholder="Phone" 
+			<input type="number" name="phone" placeholder="Phone" maxlength="50" 
 				value="<?php echo $val->phone ?>" required />
 		</div>
 		<div class="col-md-6 col-lg-6">
@@ -50,7 +50,7 @@
 	<div class="row">	
 		<div class="col-md-12 col-lg-12">
 			<span>Vacuuming price per &#13217; € </span>
-			<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" 
+			<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" maxlength="50" 
 				value="<?php echo $val->vcpricepermeter ?>" required />
 		</div>
 	</div>
@@ -67,7 +67,7 @@
 			<span class="mopingpricepermeterlabel <?php echo ($val->moping == 'No') ? 'displayNone' : ''; ?>" >
 				Moping price per &#13217; € 
 			</span>
-			<input type="number" name="mopingpricepermeter" 
+			<input type="number" name="mopingpricepermeter" maxlength="50" 
 				class="mopingpricepermeter <?php echo ($val->moping == 'No') ? 'displayNone' : ''; ?>" 
 				placeholder="Moping Price Per Meter (eg. 2)" 
 				value="<?php echo $val->mopingpricepermeter ?>" />
@@ -86,7 +86,7 @@
 			<span class="bathroomcleaningpricelabel <?php echo ($val->bathroomcleaning == 'No') ? 'displayNone' : ''; ?>" >
 				Bathroom Cleaning price €
 			</span>
-			<input type="number" name="bathroomcleaningprice" 
+			<input type="number" name="bathroomcleaningprice" maxlength="50" 
 				class="bathroomcleaningprice <?php echo ($val->bathroomcleaning == 'No') ? 'displayNone' : ''; ?>" 
 				placeholder="Bathroom Cleaning Price (eg. 2)" 
 				value="<?php echo $val->bathroomcleaningprice ?>" />
@@ -105,7 +105,7 @@
 			<span class="kitchencleaningpricelabel <?php echo ($val->kitchencleaning == 'No') ? 'displayNone' : ''; ?>" >
 				Kitchen Cleaning Price €
 			</span>
-			<input type="number" name="kitchencleaningprice" 
+			<input type="number" name="kitchencleaningprice" maxlength="50" 
 				class="kitchencleaningprice <?php echo ($val->kitchencleaning == 'No') ? 'displayNone' : ''; ?>"
 				placeholder="Kitchen Cleaning Price (eg. 2)" 
 				value="<?php echo $val->kitchencleaningprice ?>" />

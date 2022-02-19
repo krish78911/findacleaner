@@ -9,14 +9,14 @@
 					<div class="row">	
 						<div class="col-lg-12">
 							<span>Title</span>
-							<input type="text" name="title" placeholder="Title" 
+							<input type="text" name="title" placeholder="Title" maxlength="100"
 								value="<?php echo $val->title ?>" required />
 						</div>
 					</div>
 					<div class="row">	
 						<div class="col-lg-12">
 							<span>Description</span>
-							<textarea name="aboutustext" placeholder="Description" required>
+							<textarea name="aboutustext" placeholder="Description" maxlength="500" required>
 								<?php echo $val->aboutustext ?>
 							</textarea>
 						</div>
@@ -24,7 +24,7 @@
 					<div class="row">	
 						<div class="col-lg-12">
 							<span>Slider Text</span>
-							<input type="text" name="slidertext" placeholder="SliderText" 
+							<input type="text" name="slidertext" placeholder="SliderText" maxlength="100" 
 								value="<?php echo $val->slidertext ?>" required />
 						</div>
 					</div>

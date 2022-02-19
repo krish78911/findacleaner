@@ -6,28 +6,28 @@
 				<div class="row">	
 					<div class="col-md-6 col-lg-6">
 						<span>First Name</span>
-						<input type="text" name="firstname" placeholder="Firstname" required />
+						<input type="text" name="firstname" placeholder="Firstname" maxlength="50" required />
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span>Last Name</span>
-						<input type="text" name="lastname" placeholder="Lastname" required />
+						<input type="text" name="lastname" placeholder="Lastname" maxlength="50" required />
 					</div>
 				</div>
 				<div class="row">	
 					<div class="col-md-6 col-lg-6">
 						<span>E-Mail</span>
-						<input type="email" name="email" placeholder="Email" id="checkEmail" required />
+						<input type="email" name="email" placeholder="Email" maxlength="50" id="checkEmail" required />
 						<span id="emailExistMessage"></span>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span>Password</span>
-						<input type="text" name="password" placeholder="Password" required />
+						<input type="text" name="password" placeholder="Password" maxlength="50" required />
 					</div>
 				</div>
 				<div class="row">	
 					<div class="col-md-6 col-lg-6">
 						<span>Phone</span>
-						<input type="number" name="phone" placeholder="Phone" required />
+						<input type="number" name="phone" placeholder="Phone" maxlength="50" required />
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span>City</span>
@@ -42,7 +42,7 @@
 				<div class="row">	
 					<div class="col-md-12 col-lg-12">
 						<span>Vacuuming price per &#13217; €</span>
-						<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" required />
+						<input type="number" name="vcpricepermeter" maxlength="50" placeholder="Vacuuming Price Per Meter (eg. 2)" required />
 					</div>
 				</div>
 				<div class="row">	
@@ -56,7 +56,7 @@
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span class="mopingpricepermeterlabel displayNone" >Moping price per &#13217; €</span>
-						<input type="number" name="mopingpricepermeter" class="mopingpricepermeter displayNone" 
+						<input type="number" name="mopingpricepermeter" maxlength="50" class="mopingpricepermeter displayNone" 
 							placeholder="Moping Price Per Meter (eg. 2)" />
 					</div>
 				</div>
@@ -71,7 +71,7 @@
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span class="bathroomcleaningpricelabel displayNone" >Bathroom Cleaning price €</span>
-						<input type="number" name="bathroomcleaningprice" class="bathroomcleaningprice displayNone" 
+						<input type="number" name="bathroomcleaningprice" maxlength="50" class="bathroomcleaningprice displayNone" 
 							placeholder="Bathroom Cleaning Price (eg. 2)" />
 					</div>
 				</div>
@@ -86,7 +86,7 @@
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span class="kitchencleaningpricelabel displayNone" >Kitchen Cleaning Price €</span>
-						<input type="number" name="kitchencleaningprice" class="kitchencleaningprice displayNone" 
+						<input type="number" name="kitchencleaningprice" maxlength="50" class="kitchencleaningprice displayNone" 
 							placeholder="Kitchen Cleaning Price (eg. 2)" />
 					</div>
 				</div>

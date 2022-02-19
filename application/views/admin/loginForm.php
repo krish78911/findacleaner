@@ -7,9 +7,9 @@
 			<label>Advertise</label>
 			<form action="<?php echo base_url('Login/checkLogin'); ?>" method="POST" id="loginForm">
                 <span>E-Mail</span>
-				<input type="text" name="email" placeholder="Email" id="checkEmail" required />
+				<input type="text" name="email" placeholder="Email" id="checkEmail" maxlength="50" required />
                 <span>Password</span>
-				<input type="text" name="password" placeholder="Password" required />
+				<input type="text" name="password" placeholder="Password" maxlength="50" required />
 				<button type="submit" id="loginFormButton">Submit</button>
 			</form>
 			<span id="wrongEmailOrPassword"></span>
