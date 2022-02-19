@@ -31,12 +31,17 @@
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span>City</span>
-						<input type="text" name="city" placeholder="City" required />
+						<select name="city" required>
+							<option value="">City</option>
+								<?php foreach($cities as $city) {
+									echo '<option value="'.$city->city.'">'.$city->city.'</option>';
+								} ?>
+						</select>
 					</div>
 				</div>
 				<div class="row">	
 					<div class="col-md-12 col-lg-12">
-						<span>Vacuuming price per &#13217; </span>
+						<span>Vacuuming price per &#13217; €</span>
 						<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" required />
 					</div>
 				</div>
@@ -50,9 +55,9 @@
 						</select>
 					</div>
 					<div class="col-md-6 col-lg-6">
-						<span class="mopingpricepermeterlabel displayNone" >Moping price per &#13217; </span>
+						<span class="mopingpricepermeterlabel displayNone" >Moping price per &#13217; €</span>
 						<input type="number" name="mopingpricepermeter" class="mopingpricepermeter displayNone" 
-							placeholder="Moping Price Per Meter (eg. 2)" required />
+							placeholder="Moping Price Per Meter (eg. 2)" />
 					</div>
 				</div>
 				<div class="row">	
@@ -65,9 +70,9 @@
 						</select>
 					</div>
 					<div class="col-md-6 col-lg-6">
-						<span class="bathroomcleaningpricelabel displayNone" >Bathroom Cleaning price</span>
+						<span class="bathroomcleaningpricelabel displayNone" >Bathroom Cleaning price €</span>
 						<input type="number" name="bathroomcleaningprice" class="bathroomcleaningprice displayNone" 
-							placeholder="Bathroom Cleaning Price (eg. 2)" required />
+							placeholder="Bathroom Cleaning Price (eg. 2)" />
 					</div>
 				</div>
 				<div class="row">	
@@ -80,17 +85,18 @@
 						</select>
 					</div>
 					<div class="col-md-6 col-lg-6">
-						<span class="kitchencleaningpricelabel displayNone" >Kitchen Cleaning Price</span>
+						<span class="kitchencleaningpricelabel displayNone" >Kitchen Cleaning Price €</span>
 						<input type="number" name="kitchencleaningprice" class="kitchencleaningprice displayNone" 
-							placeholder="Kitchen Cleaning Price (eg. 2)" required />
+							placeholder="Kitchen Cleaning Price (eg. 2)" />
+					</div>
+				</div>
+				<div class="row">	
+					<div class="col-md-12 col-lg-12">
+						<button type="submit" id="registerAdvertiseButton">Submit</button>
 					</div>
 				</div>
 			</form>
-			<div class="row">	
-				<div class="col-md-12 col-lg-12">
-					<button type="submit" id="registerAdvertiseButton">Submit</button>
-				</div>
-			</div>
+			
 			<span class="advertiseSuccessOrFail"></span>
 		</div>
 	</div>
@@ -100,6 +106,7 @@
 
 <script>
 	$(document).ready(function () {
+		/*
 		$('#registerAdvertiseButton').on('click', function() {
 			$.ajax({  
 				type: 'POST',  
@@ -117,6 +124,7 @@
 				}
 			});
 		});
+		*/
 
         $("#advertiseForm").on('submit', function (e)
         {
@@ -129,11 +137,15 @@
                         data: postData,
                         success: function (data, textStatus, jqXHR)
                         {
-							$('.advertiseSuccessOrFail').html(data);
-							setInterval(function(){ 
-								var url = '<?php echo base_url('Admin') ?>';
-								$(location).attr('href',url);
-							}, 100);	
+							if(data == 'Email Exists') {
+								$('#emailExistMessage').html(data);
+							} else {
+								$('.advertiseSuccessOrFail').html(data);
+									setInterval(function(){ 
+									var url = '<?php echo base_url('Admin') ?>';
+									$(location).attr('href',url);
+								}, 100);	
+							}
                         },
                         error: function (jqXHR, textStatus, errorThrown)
                         {

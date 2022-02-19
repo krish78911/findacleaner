@@ -4,8 +4,9 @@
 <form action="<?php echo base_url('Home/findCleaners'); ?>" method="POST" id="searchForm">
     <select name="city" required>
         <option value="">City</option>
-        <option value="Berlin">Berlin</option>
-        <option value="Hamburg">Hamburg</option>
+            <?php foreach($cities as $city) {
+                echo '<option value="'.$city->city.'">'.$city->city.'</option>';
+            } ?>
     </select>
     <select name="vacumming" required disabled>
         <option value="Yes">Vacuuming</option>

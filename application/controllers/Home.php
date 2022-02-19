@@ -10,16 +10,17 @@ class Home extends BaseController {
 
     public function __construct() {
         parent::__construct();
-        // load models
-        $this->load->model('Cleaners');
-        echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
+        // echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
     }
 
     public function index() {
         $this->data['cleaners'] = $this->Cleaners->search();
+        $this->data['cities'] = $this->Cities->search();
+        $this->data['aboutus'] = $this->AboutusAndSlider->search();
+        $this->data['slidertext'] = $this->AboutusAndSlider->search();
         $this->load->view('head');
         $this->load->view('navigation');
-        $this->load->view('slider');
+        $this->load->view('slider', $this->data);
         $this->load->view('home', $this->data);
         $this->load->view('about');
         $this->load->view('footer');   

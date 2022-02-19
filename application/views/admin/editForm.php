@@ -1,7 +1,9 @@
 <label>Edit</label>
-<form action="<?php echo base_url('Admin/editAdvertisement'); ?>" method="POST" class="editForm">
+<form action="<?php echo base_url('Admin/editAdvertisement'); ?>" method="POST" class="editForm" autocomplete="off">
 	<input type="text" name="id" placeholder="id" 
 		value="<?php echo $val->id ?>" class="displayNone" required />
+	<input type="text" name="userright" placeholder="userright" 
+		value="<?php echo $val->userright ?>" class="displayNone" required />
 
 	<div class="row">	
 		<div class="col-md-6 col-lg-6">
@@ -17,12 +19,12 @@
 	</div>
 	<div class="row">	
 		<div class="col-md-6 col-lg-6">
-			<span>E-Mail</span>
+			<span class="displayNone">E-Mail</span>
 			<input type="email" name="email" placeholder="Email" 
 				value="<?php echo $val->email ?>" class="displayNone" required/>
 		</div>
 		<div class="col-md-6 col-lg-6">
-			<span>Password</span>
+			<span class="displayNone">Password</span>
 			<input type="text" name="password" placeholder="Password" 
 				value="<?php echo $val->password ?>" class="displayNone" required/>
 		</div>
@@ -35,13 +37,19 @@
 		</div>
 		<div class="col-md-6 col-lg-6">
 			<span>City</span>
-			<input type="text" name="city" placeholder="City"
-				value="<?php echo $val->city ?>" required />
+			<select name="city" required>
+				<option value="">City</option>
+					<?php foreach($cities as $city) { ?>
+						<option value="<?php echo $city->city ?>" 
+							<?php echo ($val->city == $city->city) ? 'selected':'' ?> ><?php echo $city->city ?>
+						</option>';
+					<?php } ?>
+			</select>
 		</div>
 	</div>
 	<div class="row">	
 		<div class="col-md-12 col-lg-12">
-			<span>Vacuuming price per &#13217; </span>
+			<span>Vacuuming price per &#13217; € </span>
 			<input type="number" name="vcpricepermeter" placeholder="Vacuuming Price Per Meter (eg. 2)" 
 				value="<?php echo $val->vcpricepermeter ?>" required />
 		</div>
@@ -51,14 +59,18 @@
 			<span>Moping</span>
 			<select name="moping" class="moping" required>
 				<option value="">Moping ? </option>
-				<option value="Yes" <?php echo ($val->moping == 'Yes') ? 'selected' : ''; ?>>Yes</option>
-				<option value="No"  <?php echo ($val->moping == 'No') ? 'selected' : ''; ?>>No</option>
+				<option value="Yes" <?php echo ($val->moping === 'Yes') ? 'selected' : ''; ?>>Yes</option>
+				<option value="No"  <?php echo ($val->moping === 'No') ? 'selected' : ''; ?>>No</option>
 			</select>
 		</div>
 		<div class="col-md-6 col-lg-6">
-			<span class="mopingpricepermeterlabel displayNone" >Moping price per &#13217; </span>
-			<input type="number" name="mopingpricepermeter" class="mopingpricepermeter" placeholder="Moping Price Per Meter (eg. 2)" 
-				value="<?php echo $val->mopingpricepermeter ?>" required />
+			<span class="mopingpricepermeterlabel <?php echo ($val->moping == 'No') ? 'displayNone' : ''; ?>" >
+				Moping price per &#13217; € 
+			</span>
+			<input type="number" name="mopingpricepermeter" 
+				class="mopingpricepermeter <?php echo ($val->moping == 'No') ? 'displayNone' : ''; ?>" 
+				placeholder="Moping Price Per Meter (eg. 2)" 
+				value="<?php echo $val->mopingpricepermeter ?>" />
 		</div>
 	</div>
 	<div class="row">	
@@ -71,9 +83,13 @@
 			</select>
 		</div>
 		<div class="col-md-6 col-lg-6">
-			<span class="bathroomcleaningpricelabel displayNone" >Bathroom Cleaning price</span>
-			<input type="number" name="bathroomcleaningprice"class="bathroomcleaningprice" placeholder="Bathroom Cleaning Price (eg. 2)" 
-				value="<?php echo $val->bathroomcleaningprice ?>" required />
+			<span class="bathroomcleaningpricelabel <?php echo ($val->bathroomcleaning == 'No') ? 'displayNone' : ''; ?>" >
+				Bathroom Cleaning price €
+			</span>
+			<input type="number" name="bathroomcleaningprice" 
+				class="bathroomcleaningprice <?php echo ($val->bathroomcleaning == 'No') ? 'displayNone' : ''; ?>" 
+				placeholder="Bathroom Cleaning Price (eg. 2)" 
+				value="<?php echo $val->bathroomcleaningprice ?>" />
 		</div>
 	</div>
 	<div class="row">	
@@ -86,9 +102,13 @@
 			</select>
 		</div>
 		<div class="col-md-6 col-lg-6">
-			<span class="kitchencleaningpricelabel displayNone" >Kitchen Cleaning Price</span>
-			<input type="number" name="kitchencleaningprice" class="kitchencleaningprice" placeholder="Kitchen Cleaning Price (eg. 2)" 
-				value="<?php echo $val->kitchencleaningprice ?>" required />
+			<span class="kitchencleaningpricelabel <?php echo ($val->kitchencleaning == 'No') ? 'displayNone' : ''; ?>" >
+				Kitchen Cleaning Price €
+			</span>
+			<input type="number" name="kitchencleaningprice" 
+				class="kitchencleaningprice <?php echo ($val->kitchencleaning == 'No') ? 'displayNone' : ''; ?>"
+				placeholder="Kitchen Cleaning Price (eg. 2)" 
+				value="<?php echo $val->kitchencleaningprice ?>" />
 		</div>
 	</div>
 	<div class="row">	
@@ -99,3 +119,46 @@
 </form>
 
 <script type="text/javascript" src="<?php echo base_url('assets/js/showHidePriceInputs.js'); ?>"></script>
+
+<script>
+	$(document).ready(function () {
+        $(".editForm").on('submit', function (e)
+        {
+            var postData = $(this).serializeArray();
+            var formURL = $(this).attr("action");
+            $.ajax(
+                    {
+                        url: formURL,
+                        type: "POST",
+                        data: postData,
+                        success: function (data, textStatus, jqXHR)
+                        {
+							setTimeout(function () {
+                                $('.allCleaners').html(data);
+                            }, 1000);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown)
+                        {
+                            $('.allCleaners').text("Error")
+                        }
+                    });
+            e.preventDefault(); //STOP default action
+        });
+
+		$('.delete').on('click', function() {
+			$.ajax({
+				url: 'Admin/deleteAdvertisement/'+$(this).attr('id'),
+				type: "POST",
+				success: function(data){
+					//alert('11');
+					setTimeout(function () {
+						$('.allCleaners').html(data);
+					}, 1000);
+				},
+				error: function(data){
+					//alert("error!");
+				}
+			});
+		})
+    });
+</script>

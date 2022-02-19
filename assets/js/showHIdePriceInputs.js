@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+ // alert($('.moping').val());
+ 
     if($('.moping').val() == 'Yes') {
         $(".mopingpricepermeter").show();
         $(".mopingpricepermeterlabel").show();
@@ -21,6 +23,7 @@ $(document).ready(function () {
         $(".kitchencleaningprice").hide();
         $(".kitchencleaningpricelabel").hide();
     }
+    
     $('.moping').on('change', function() {
         if(this.value == 'Yes') {
             $(".mopingpricepermeter").show();

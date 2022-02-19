@@ -12,8 +12,6 @@ class Logout extends BaseController {
         parent::__construct();
 
         session_start();
-        // load models
-        $this->load->model('Cleaners');
     }
 
     public function index() {

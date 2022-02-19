@@ -10,8 +10,6 @@ class CheckIfEmailExists extends BaseController {
 
     public function __construct() {
         parent::__construct();
-        // load models
-        $this->load->model('Cleaners');
     }
 
     public function index() {

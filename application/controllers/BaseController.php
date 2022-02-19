@@ -22,6 +22,11 @@ class BaseController extends CI_Controller {
         $this->load->database();
         $this->load->helper(array('url', 'form', 'html', 'directory', 'file')); //load necessary helpers
 
+        // load models
+        $this->load->model('Cleaners');
+        $this->load->model('Cities');
+        $this->load->model('AboutusAndSlider');
+
         /*
             -SEARCH CONDITION FOR PRICE
             -SEND EMAIL
@@ -32,11 +37,16 @@ class BaseController extends CI_Controller {
             -REGISTER (check if username exists), if session exists then submit to admin, else to register
             -ON USER DELETE logout
             -PUT LABEL ABOVE FORM INPUTS (edit form, login form)
+            -EDIT FORM SHOW HIDE PRICE INPUTS NOT WORKING
+            -AJAX WORKS ONLY ONCE ERROR
+            -CHECK IF PRICE INPUTS EMPTY THEN ENTER 0
+            -CITIES FROM TABLE
+            -ADMIN SHOW ALL BUT EDIT ONLY USERRIGHT
+            -ABOUT US FROM DB AND EDIT, DELETE
             PAGINATION
             STYLING
-            CHECK IF PRICE INPUTS EMPTY THEN ENTER 0
-            EDIT FORM SHOW HIDE PRICE INPUTS NOT WORKING
-            AJAX WORKS ONLY ONCE ERROR
+            TEST
+            LANGUAGES
         */
     }
 }
