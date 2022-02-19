@@ -41,6 +41,15 @@ class Cleaners extends CI_Model {
         return $query->result();
     }
 
+    function searchWhereEmailAndPassword($email, $password) {
+        $this->db->select('*');
+        $this->db->from('cleaner');
+        $this->db->where('email', $email);
+        $this->db->where('password', $password);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     function searchWhereUsername($email) {
         $this->db->select('*');
         $this->db->from('cleaner');

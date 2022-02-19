@@ -50,12 +50,12 @@ body .advertisementForm form {
     padding: 5px;
     width: 100%;
 }
-body .advertisementForm form input, body .advertisementForm form select, body .advertisementForm form button {
+body .advertisementForm input, body .advertisementForm select, body .advertisementForm button {
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
 }
-body .advertisementForm form button {
+body .advertisementForm button {
     background-color: #AAC551;
     color: white;
     border: none;

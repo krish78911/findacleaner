@@ -74,8 +74,8 @@ body {
         form {
             padding: 5px;
             width: 100%;
-            @include form-style;
         }
+        @include form-style;
     }
     
     .editForm {

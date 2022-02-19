@@ -24,16 +24,18 @@ class BaseController extends CI_Controller {
 
         /*
             -SEARCH CONDITION FOR PRICE
-            ON EDIT EMAIL AND PASSWORD, MANAGE LOGIN, LOGOUT
-            SHOW MOPING, KITCHEN, BATHROOM PRICE INPUT IF YES SELECTED
             -SEND EMAIL
-            PAGINATION
-            LOGIN, use newly created login form
             -LOGOUT
+            -ON EDIT EMAIL AND PASSWORD, MANAGE LOGIN, LOGOUT
+            -SHOW MOPING, KITCHEN, BATHROOM PRICE INPUT IF YES SELECTED
+            -LOGIN, use newly created login form
+            -REGISTER (check if username exists), if session exists then submit to admin, else to register
+            -ON USER DELETE logout
+            -PUT LABEL ABOVE FORM INPUTS (edit form, login form)
+            PAGINATION
             STYLING
-            REGISTER (check if username exists), if session exists then submit to admin, else to register
-            ON USER DELETE logout
-            PUT LABEL ABOVE FORM INPUTS
+            CHECK IF PRICE INPUTS EMPTY THEN ENTER 0
+            EDIT FORM SHOW HIDE PRICE INPUTS NOT WORKING
             AJAX WORKS ONLY ONCE ERROR
         */
     }

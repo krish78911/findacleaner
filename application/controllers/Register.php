@@ -15,20 +15,13 @@ class Register extends BaseController {
     }
 
     public function index() {
-        $this->data['cleaners'] = $this->Cleaners->search();
-        // var_dump($this->data['cleaners']);
         $this->load->view('head');
         $this->load->view('navigation');
         $this->load->view('admin/advertiseForm');
     }
 
     public function register() {
-
-        $_SESSION["email"] = $this->input->post('email');
-        $_SESSION["password"] = $this->input->post('password');
-        $_SESSION["loggedin"] = true;
-
-        /*
+        
         $data = array(
             'firstname' => $this->input->post('firstname'),
             'lastname' => $this->input->post('lastname'),
@@ -37,15 +30,15 @@ class Register extends BaseController {
             'city' => $this->input->post('city'),
             'vcpricepermeter' => $this->input->post('vcpricepermeter'),
             'moping' => $this->input->post('moping'),
-            'mopingpricepermeter' => $this->input->post('mopingpricepermeter'),
+            'mopingpricepermeter' => (empty($this->input->post('mopingpricepermeter'))) ? 0 : $this->input->post('vcpricepermeter'),
             'bathroomcleaning' => $this->input->post('bathroomcleaning'),
-            'bathroomcleaningprice' => $this->input->post('bathroomcleaningprice'),
+            'bathroomcleaningprice' => (empty($this->input->post('bathroomcleaningprice'))) ? 0 : $this->input->post('bathroomcleaningprice'),
             'kitchencleaning' => $this->input->post('kitchencleaning'),
-            'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
+            'kitchencleaningprice' => (empty($this->input->post('kitchencleaningprice'))) ? 0 : $this->input->post('kitchencleaningprice'),
             'password' => $this->input->post('password'),
+            'userright' => 'user',
         );
-        */
-
+        /*
         $data = array(
             'firstname' => 'test',
             'lastname' => 'test',
@@ -60,10 +53,16 @@ class Register extends BaseController {
             'kitchencleaning' => 'Yes',
             'kitchencleaningprice' => 1,
             'password' => '123',
+            'userright' => 'user',
         );
+        */
         $this->Cleaners->insert($data);
 
         if($this->db->affected_rows() > 0) {
+            $_SESSION["email"] = $this->input->post('email');
+            $_SESSION["password"] = $this->input->post('password');
+            $_SESSION["userrights"] = 'user';
+            $_SESSION["loggedin"] = true;
             echo "Record added..";
         } else {
             echo "Error..";

@@ -15,9 +15,12 @@ class Admin extends BaseController {
             header("Location: " . base_url('Admin/login'));
         }
         */
+
+        /*
         $_SESSION["email"] = 'admin';
         $_SESSION["password"] = 'admin';
         $_SESSION["loggedin"] = true;
+        */
         echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
         // load models
         $this->load->model('Cleaners');
@@ -29,7 +32,7 @@ class Admin extends BaseController {
 
     public function index() {
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
-            if($_SESSION["email"] != "admin") {
+            if($_SESSION["userrights"] != "admin") {
                 $this->data['cleaners'] = $this->Cleaners->searchWhereUsername($_SESSION["email"]);
             }
             else {
@@ -64,12 +67,13 @@ class Admin extends BaseController {
             'city' => $this->input->post('city'),
             'vcpricepermeter' => $this->input->post('vcpricepermeter'),
             'moping' => $this->input->post('moping'),
-            'mopingpricepermeter' => $this->input->post('mopingpricepermeter'),
+            'mopingpricepermeter' => (empty($this->input->post('mopingpricepermeter'))) ? 0 : $this->input->post('vcpricepermeter'),
             'bathroomcleaning' => $this->input->post('bathroomcleaning'),
-            'bathroomcleaningprice' => $this->input->post('bathroomcleaningprice'),
+            'bathroomcleaningprice' => (empty($this->input->post('bathroomcleaningprice'))) ? 0 : $this->input->post('bathroomcleaningprice'),
             'kitchencleaning' => $this->input->post('kitchencleaning'),
-            'kitchencleaningprice' => $this->input->post('kitchencleaningprice'),
+            'kitchencleaningprice' => (empty($this->input->post('kitchencleaningprice'))) ? 0 : $this->input->post('kitchencleaningprice'),
             'password' => $this->input->post('password'),
+            'userright' => 'user',
         );
         $this->Cleaners->update($data, $id);
 
@@ -89,7 +93,7 @@ class Admin extends BaseController {
         */
 
         if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
-            if($_SESSION["email"] != "admin") {
+            if($_SESSION["userrights"] != "admin") {
                 $this->data['cleaners'] = $this->Cleaners->searchWhereUsername($_SESSION["email"]);
             }
             else {
@@ -105,7 +109,7 @@ class Admin extends BaseController {
 
         if($this->db->affected_rows() > 0) {
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == 1) {
-                if($_SESSION["email"] != "admin") {
+                if($_SESSION["userrights"] != "admin") {
                     session_destroy();
                     $urlRefresh = base_url();
                     header("Refresh: 1; URL=\"" . $urlRefresh . "\""); // redirect in 5 seconds
