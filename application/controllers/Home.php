@@ -14,7 +14,8 @@ class Home extends BaseController {
     }
 
     public function index() {
-        $this->data['cleaners'] = $this->Cleaners->search();
+        $this->data['cleanersAll'] = $this->Cleaners->searchLimit();
+        $this->data['cleaners'] = $this->Cleaners->searchLimit(5, 0, true);
         $this->load->view('head', $this->data);
         $this->load->view('navigation');
         $this->load->view('slider');
@@ -23,16 +24,35 @@ class Home extends BaseController {
         $this->load->view('footer');   
     }
 
-    public function findCleaners() {
-        $postData = $this->input->post();
-        $this->city = $this->input->post('city');
-        $this->vacuuming = $postData['vacuuming'];
-        $this->moping = $postData['moping'];
-        $this->metersquare = $postData['metersquare'];
-        $this->kitchencleaning = $postData['kitchencleaning'];
-        $this->bathroomcleaning = $postData['bathroomcleaning'];
-        
-        $this->data['cleaners'] = $this->Cleaners->searchWhere($postData);
+    public function demo() {
+        $this->vacuuming        = 'Yes';
+        $this->moping           = 'No';
+        $this->metersquare      = 1;
+        $this->kitchencleaning  = 'No';
+        $this->bathroomcleaning = 'No';
+
+        $this->data['cleaners'] = 
+            $this->Cleaners->searchLimit($this->input->post('limit'), $this->input->post('start'), true);
+        $this->load->view('getCleanersAndPrices'
+            , $this->data
+            , $this->vacuuming
+            , $this->moping
+            , $this->metersquare
+            , $this->kitchencleaning
+            , $this->bathroomcleaning
+        );    
+    }
+
+    public function findCleaners($limit, $start) {
+        $postData                   = $this->input->post();
+        $this->city                 = $postData['city'];
+        $this->vacuuming            = $postData['vacuuming'];
+        $this->moping               = $postData['moping'];
+        $this->metersquare          = $postData['metersquare'];
+        $this->kitchencleaning      = $postData['kitchencleaning'];
+        $this->bathroomcleaning     = $postData['bathroomcleaning'];
+        $this->data['cleanersAll']  = $this->Cleaners->searchWhere($postData);
+        $this->data['cleaners']     = $this->Cleaners->searchWhere($postData, $limit, $start, true);
         $this->load->view('getCleanersAndPrices'
             , $this->data
             , $this->vacuuming

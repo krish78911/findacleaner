@@ -22,7 +22,7 @@ class Admin extends BaseController {
                 $this->data['cleaners'] = $this->Cleaners->search();
                 
             }
-
+            
             $this->data['aboutusAndSliderText'] = $this->AboutSliderContact->search();
             // var_dump($this->data['cleaners']);
             $this->load->view('head', $this->data);
@@ -39,22 +39,22 @@ class Admin extends BaseController {
     public function editAdvertisement() {
         $id = $this->input->post('id');
         $data = array(
-            'firstname' => $this->input->post('firstname'),
-            'lastname' => $this->input->post('lastname'),
-            'email' => $this->input->post('email'),
-            'phone' => $this->input->post('phone'),
-            'city' => $this->input->post('city'),
-            'vcpricepermeter' => $this->input->post('vcpricepermeter'),
+            'firstname'             => $this->input->post('firstname'),
+            'lastname'              => $this->input->post('lastname'),
+            'email'                 => $this->input->post('email'),
+            'phone'                 => $this->input->post('phone'),
+            'city'                  => $this->input->post('city'),
+            'vcpricepermeter'       => $this->input->post('vcpricepermeter'),
             'moping' => $this->input->post('moping'),
-            'mopingpricepermeter' => 
+            'mopingpricepermeter'   => 
                 (empty($this->input->post('mopingpricepermeter')) || $this->input->post('moping')=='No') 
                     ? 0 : $this->input->post('mopingpricepermeter'),
-            'bathroomcleaning' => $this->input->post('bathroomcleaning'),
+            'bathroomcleaning'      => $this->input->post('bathroomcleaning'),
             'bathroomcleaningprice' => 
                 (empty($this->input->post('bathroomcleaningprice')) || $this->input->post('bathroomcleaning')=='No') 
                     ? 0 : $this->input->post('bathroomcleaningprice'),
             'kitchencleaning' => $this->input->post('kitchencleaning'),
-            'kitchencleaningprice' => 
+            'kitchencleaningprice'  => 
                 (empty($this->input->post('kitchencleaningprice')) || $this->input->post('kitchencleaning')=='No') 
                     ? 0 : $this->input->post('kitchencleaningprice'),
             'password' => $this->input->post('password'),
@@ -113,12 +113,12 @@ class Admin extends BaseController {
     public function editAboutAndSliderText() {
         $id = $this->input->post('id');
         $data = array(
-            'title' => $this->input->post('title'),
-            'aboutustext' => $this->input->post('aboutustext'),
-            'slidertext' => $this->input->post('slidertext'),
-            'contactaddress' => $this->input->post('contactaddress'),
-            'contactphone' => $this->input->post('contactphone'),
-            'contactemail' => $this->input->post('contactemail'),
+            'title'             => $this->input->post('title'),
+            'aboutustext'       => $this->input->post('aboutustext'),
+            'slidertext'        => $this->input->post('slidertext'),
+            'contactaddress'    => $this->input->post('contactaddress'),
+            'contactphone'      => $this->input->post('contactphone'),
+            'contactemail'      => $this->input->post('contactemail'),
         );
         $this->AboutSliderContact->update($data, $id);
 

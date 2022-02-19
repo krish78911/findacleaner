@@ -1,7 +1,7 @@
 <div class="headings">
     Enter Your Requirements
 </div>
-<form action="<?php echo base_url('Home/findCleaners'); ?>" method="POST" id="searchForm" autocomplete="off">
+<form action="<?php echo base_url('Home/findCleaners/5/0'); ?>" method="POST" id="searchForm" autocomplete="off">
     <div class="row">
         <div class="col-lg-6">
             <span>City</span>
@@ -51,6 +51,7 @@
             <input type="number" name="metersquare" maxlength="50" placeholder="size: in meter square (&#13217;)" required />
         </div>
     </div>
+
     <div class="row">
         <div class="col-lg-12">
             <button type="submit">Search</button>

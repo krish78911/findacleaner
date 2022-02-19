@@ -27,22 +27,22 @@ class Register extends BaseController {
             echo "Email Exists";
         } else {
             $data = array(
-                'firstname' => $this->input->post('firstname'),
-                'lastname' => $this->input->post('lastname'),
-                'email' => $this->input->post('email'),
-                'phone' => $this->input->post('phone'),
-                'city' => $this->input->post('city'),
-                'vcpricepermeter' => $this->input->post('vcpricepermeter'),
+                'firstname'             => $this->input->post('firstname'),
+                'lastname'              => $this->input->post('lastname'),
+                'email'                 => $this->input->post('email'),
+                'phone'                 => $this->input->post('phone'),
+                'city'                  => $this->input->post('city'),
+                'vcpricepermeter'       => $this->input->post('vcpricepermeter'),
                 'moping' => $this->input->post('moping'),
-                'mopingpricepermeter' => 
+                'mopingpricepermeter'   => 
                     (empty($this->input->post('mopingpricepermeter')) || $this->input->post('moping')=='No') 
                         ? 0 : $this->input->post('vcpricepermeter'),
-                'bathroomcleaning' => $this->input->post('bathroomcleaning'),
+                'bathroomcleaning'      => $this->input->post('bathroomcleaning'),
                 'bathroomcleaningprice' => 
                     (empty($this->input->post('bathroomcleaningprice')) || $this->input->post('bathroomcleaning')=='No') 
                         ? 0 : $this->input->post('bathroomcleaningprice'),
                 'kitchencleaning' => $this->input->post('kitchencleaning'),
-                'kitchencleaningprice' => 
+                'kitchencleaningprice'  => 
                     (empty($this->input->post('kitchencleaningprice')) || $this->input->post('kitchencleaning')=='No') 
                         ? 0 : $this->input->post('kitchencleaningprice'),
                 'password' => $this->input->post('password'),
@@ -69,10 +69,10 @@ class Register extends BaseController {
             $this->Cleaners->insert($data);
     
             if($this->db->affected_rows() > 0) {
-                $_SESSION["email"] = $this->input->post('email');
-                $_SESSION["password"] = $this->input->post('password');
+                $_SESSION["email"]      = $this->input->post('email');
+                $_SESSION["password"]   = $this->input->post('password');
                 $_SESSION["userrights"] = 'user';
-                $_SESSION["loggedin"] = true;
+                $_SESSION["loggedin"]   = true;
                 echo "Record added..";
             } else {
                 echo "Error..";

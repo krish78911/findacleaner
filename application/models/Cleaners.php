@@ -15,7 +15,18 @@ class Cleaners extends CI_Model {
         return $query->result();
     }
 
-    function searchWhere($postData) {
+    function searchLimit($limit=5, $start=0, $all=false) {
+        $this->db->select('*');
+        $this->db->from('cleaner');
+        $this->db->order_by("id", "asc");
+        if($all) {
+            $this->db->limit($limit, $start);
+        }
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function searchWhere($postData, $limit=5, $start=0, $all=false) {
         $this->db->select('*');
         $this->db->from('cleaner');
         $this->db->where('city', $postData['city']);
@@ -29,6 +40,9 @@ class Cleaners extends CI_Model {
             $this->db->where('kitchencleaning', $postData['kitchencleaning']);
         }
         $this->db->order_by("id", "asc");
+        if($all) {
+            $this->db->limit($limit, $start);
+        }
         $query = $this->db->get();
         return $query->result();
     }

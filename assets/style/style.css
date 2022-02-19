@@ -151,6 +151,17 @@ body .adminAboutAndSliderText form textarea {
     width: 100%;
     height: 200px;
 }
+body .prevNextButtons {
+    margin-top: 10px;
+}
+body .prevNextButtons .prev, body .prevNextButtons .next {
+    width: 100%;
+    padding: 10px;
+    background-color: #bf9574;
+    color: white;
+    font-size: 16px;
+    border: 1px solid black;
+}
 body .getCleanersAndPrices form span {
     color: #5e5e5e;
 }
@@ -244,6 +255,7 @@ body .modal button {
 body .cleanerTableUser {
     width: 100%;
     border: 1px solid black;
+    line-height: 1;
 }
 body .cleanerTableUser tr:nth-child(odd) {
     background: white;
@@ -264,10 +276,21 @@ body .cleanerTableUser span {
     cursor: pointer;
 }
 body .cleanerTableUser span.totalPrice {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
 body .cleanerTableUser .sendEmailButton {
     border: 0px;
+    background-image: none;
     background-color: #bf9574;
+    padding: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: #bf9574;
+    color: white;
+    font-size: 16px;
+    border: 1px solid black;
+}
+body .cleanerTableUser .sendEmailButton span {
+    line-height: 2;
 }

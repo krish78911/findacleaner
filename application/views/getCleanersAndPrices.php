@@ -6,7 +6,8 @@
         <th>Total Price</th>
         <th>Contact</th>
     </tr>
-    <?php 
+    <?php
+        // echo count($cleanersAll);
         foreach($cleaners as $key => $val) {
             echo "<tr>";
             echo "<td>".($key+1)."</td>";
@@ -108,9 +109,6 @@
         }
     ?>
 </table>
-
-
-
 
 <script>
 $(document).ready(function () {
