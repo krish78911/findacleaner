@@ -1,10 +1,7 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-7 col-lg-8">
-
-		</div>
-		<div class="col-md-5 col-lg-4 advertisementForm">
-			<label>Advertise</label>
+		<div class="col-md-6 col-lg-6 loginForm">
+			<label>LOGIN</label>
 			<form action="<?php echo base_url('Login/checkLogin'); ?>" method="POST" id="loginForm">
                 <span>E-Mail</span>
 				<input type="text" name="email" placeholder="Email" id="checkEmail" maxlength="50" required />

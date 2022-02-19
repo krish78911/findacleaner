@@ -13,10 +13,11 @@ class Register extends BaseController {
     }
 
     public function index() {
-        $this->data['cities'] = $this->Cities->search();
-        $this->load->view('head');
+        $this->load->view('head', $this->data);
         $this->load->view('navigation');
-        $this->load->view('admin/advertiseForm', $this->data);
+        $this->load->view('admin/advertiseForm');
+        $this->load->view('about');
+        $this->load->view('footer');
     }
 
     public function register() {

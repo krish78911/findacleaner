@@ -1,33 +1,39 @@
 body .displayNone {
     display: none;
 }
+body .headings {
+    color: #5e5e5e;
+    width: 100%;
+    font-size: 24px;
+}
 body .navigation {
     margin-bottom: 10px;
-    border-bottom: 5px solid #DFCFBE;
+    border-bottom: 5px solid #bf9574;
 }
 body .navigation nav {
     font-size: 18px;
 }
 body .navigation nav a#logo {
-    color: #DFCFBE;
+    color: #bf9574;
     font-size: 24px;
     padding: 0px;
 }
 body .navigation nav a#logo span.greenColor {
-    color: #AAC551;
+    color: #bf9574;
 }
 body .navigation nav a#logo span.pinkColor {
-    color: #CE2DA7;
+    color: #ff77a0;
 }
 body .navigation nav a {
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
-    color: black;
+    color: #5e5e5e;
     text-decoration: underline;
 }
 body .cleanerTableAdmin {
     width: 100%;
+    border: 1px solid black;
 }
 body .cleanerTableAdmin tr:nth-child(odd) {
     background: white;
@@ -35,46 +41,64 @@ body .cleanerTableAdmin tr:nth-child(odd) {
 body .cleanerTableAdmin tr:nth-child(even) {
     background: #CCC;
 }
-body .cleanerTableAdmin tr {
-    border: 1px outset black;
-}
 body .cleanerTableAdmin td, body .cleanerTableAdmin th {
     padding: 5px;
+    vertical-align: top;
 }
 body .cleanerTableAdmin span {
     cursor: pointer;
 }
-body .advertisementForm {
-    border: 1px outset black;
+body .advertisementForm, body .loginForm {
+    border: 1px solid black;
 }
-body .advertisementForm label {
+body .advertisementForm label, body .loginForm label {
     width: 100%;
     text-align: center;
     font-size: 24px;
 }
-body .advertisementForm form {
+body .advertisementForm form, body .loginForm form {
     padding: 5px;
     width: 100%;
 }
-body .advertisementForm input, body .advertisementForm select, body .advertisementForm button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 5px;
+body .advertisementForm span, body .loginForm span {
+    color: #5e5e5e;
 }
-body .advertisementForm button {
-    background-color: #AAC551;
+body .advertisementForm input, body .advertisementForm select, body .advertisementForm button, body .loginForm input, body .loginForm select, body .loginForm button {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .advertisementForm select, body .advertisementForm button, body .loginForm select, body .loginForm button {
+    padding: 10px;
+}
+body .advertisementForm input, body .loginForm input {
+    padding: 8px;
+}
+body .advertisementForm button, body .loginForm button {
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
 }
+body .editForm span {
+    color: #5e5e5e;
+}
 body .editForm input, body .editForm select, body .editForm button {
     width: 100%;
-    padding: 10px;
     margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .editForm select, body .editForm button {
+    padding: 10px;
+}
+body .editForm input {
+    padding: 8px;
 }
 body .editForm button {
-    background-color: #AAC551;
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
@@ -82,9 +106,16 @@ body .editForm button {
 }
 body .aboutus {
     margin-top: 10px;
+    color: white;
+    background-color: #bf9574;
+    padding: 20px;
 }
-body .aboutus .heading {
-    font-size: 24px;
+body .aboutus .headings {
+    text-align: center;
+    color: white;
+}
+body .aboutus .aboutusText {
+    font-size: 16px;
     text-align: center;
 }
 body .adminAboutAndSliderText {
@@ -94,13 +125,23 @@ body .adminAboutAndSliderText form {
     padding: 10px;
     border: 1px solid black;
 }
+body .adminAboutAndSliderText form span {
+    color: #5e5e5e;
+}
 body .adminAboutAndSliderText form input, body .adminAboutAndSliderText form select, body .adminAboutAndSliderText form button {
     width: 100%;
-    padding: 10px;
     margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .adminAboutAndSliderText form select, body .adminAboutAndSliderText form button {
+    padding: 10px;
+}
+body .adminAboutAndSliderText form input {
+    padding: 8px;
 }
 body .adminAboutAndSliderText form button {
-    background-color: #AAC551;
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
@@ -110,22 +151,34 @@ body .adminAboutAndSliderText form textarea {
     width: 100%;
     height: 200px;
 }
+body .getCleanersAndPrices form span {
+    color: #5e5e5e;
+}
 body .getCleanersAndPrices form input, body .getCleanersAndPrices form select, body .getCleanersAndPrices form button {
     width: 100%;
-    padding: 10px;
     margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .getCleanersAndPrices form select, body .getCleanersAndPrices form button {
+    padding: 10px;
+}
+body .getCleanersAndPrices form input {
+    padding: 8px;
 }
 body .getCleanersAndPrices form button {
-    background-color: #AAC551;
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
 }
 body .footer {
-    height: 200px;
-    background-color: #DFCFBE;
     margin-top: 10px;
+    padding: 20px;
+    color: #5e5e5e;
+    font-size: 16px;
+    text-align: center;
 }
 body .slider #sliderImage {
     background-image: url("../images/banner-inner01.jpg");
@@ -137,35 +190,52 @@ body .slider #sliderImage {
     color: white;
     padding: 20px;
     font-family: "Helvetica";
-}
-body .search label {
-    width: 100%;
-    font-size: 24px;
+    border: 1px solid black;
 }
 body .search #searchForm {
-    border: 1px outset black;
+    border: 1px solid black;
     padding: 5px;
     width: 100%;
 }
+body .search #searchForm span {
+    color: #5e5e5e;
+}
 body .search #searchForm input, body .search #searchForm select, body .search #searchForm button {
     width: 100%;
-    padding: 10px;
     margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .search #searchForm select, body .search #searchForm button {
+    padding: 10px;
+}
+body .search #searchForm input {
+    padding: 8px;
 }
 body .search #searchForm button {
-    background-color: #AAC551;
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
     font-weight: bold;
 }
+body .modal span {
+    color: #5e5e5e;
+}
 body .modal input, body .modal select, body .modal button {
     width: 100%;
-    padding: 10px;
     margin-bottom: 5px;
+    border-radius: 0px;
+    border: 1px solid #5e5e5e;
+}
+body .modal select, body .modal button {
+    padding: 10px;
+}
+body .modal input {
+    padding: 8px;
 }
 body .modal button {
-    background-color: #AAC551;
+    background-color: #bf9574;
     color: white;
     border: none;
     font-size: 18px;
@@ -173,7 +243,7 @@ body .modal button {
 }
 body .cleanerTableUser {
     width: 100%;
-    border: 1px outset black;
+    border: 1px solid black;
 }
 body .cleanerTableUser tr:nth-child(odd) {
     background: white;
@@ -181,16 +251,14 @@ body .cleanerTableUser tr:nth-child(odd) {
 body .cleanerTableUser tr:nth-child(even) {
     background: #CCC;
 }
-body .cleanerTableUser tr {
-    border: 1px outset black;
-}
-body .cleanerTableUser th {
-    background-color: #AAC551;
-    color: white;
-}
 body .cleanerTableUser td, body .cleanerTableUser th {
     padding: 5px;
     vertical-align: top;
+}
+body .cleanerTableUser th {
+    background-image: none;
+    background-color: #bf9574;
+    color: white;
 }
 body .cleanerTableUser span {
     cursor: pointer;
@@ -198,4 +266,8 @@ body .cleanerTableUser span {
 body .cleanerTableUser span.totalPrice {
     font-size: 25px;
     font-weight: bold;
+}
+body .cleanerTableUser .sendEmailButton {
+    border: 0px;
+    background-color: #bf9574;
 }

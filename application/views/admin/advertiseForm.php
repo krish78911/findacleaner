@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-lg-12 advertisementForm">
-			<label>Advertise</label>
+			<label>Advertise/Register</label>
 			<form action="<?php echo base_url('Register/register'); ?>" method="POST" id="advertiseForm">
 				<div class="row">	
 					<div class="col-md-6 col-lg-6">

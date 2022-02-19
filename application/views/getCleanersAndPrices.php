@@ -59,7 +59,7 @@
             
             echo "<td>";
                 echo ($totalPrice != 0) ?
-                    "<button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal".$key."'>
+                    "<button type='button' class='btn btn-info btn-lg sendEmailButton' data-toggle='modal' data-target='#myModal".$key."'>
                         <span class='glyphicon glyphicon-envelope'></span>
                     </button>" :
                     "<span class='totalPrice'>-</span>";

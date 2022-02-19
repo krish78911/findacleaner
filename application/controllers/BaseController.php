@@ -25,7 +25,12 @@ class BaseController extends CI_Controller {
         // load models
         $this->load->model('Cleaners');
         $this->load->model('Cities');
-        $this->load->model('AboutusAndSlider');
+        $this->load->model('AboutSliderContact');
+
+        $this->data['cities'] = $this->Cities->search();
+        $this->data['aboutus'] = $this->AboutSliderContact->search();
+        $this->data['slidertext'] = $this->AboutSliderContact->search();
+        $this->data['contact'] = $this->AboutSliderContact->search();
 
         /*
             -SEARCH CONDITION FOR PRICE

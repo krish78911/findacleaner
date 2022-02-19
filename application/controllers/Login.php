@@ -15,9 +15,11 @@ class Login extends BaseController {
     }
 
     public function index() {
-        $this->load->view('head');
+        $this->load->view('head', $this->data);
         $this->load->view('navigation');
-        $this->load->view('admin/loginForm');
+        $this->load->view('admin/loginForm');  
+        $this->load->view('about');  
+        $this->load->view('footer');  
     }
 
     public function checkLogin() {

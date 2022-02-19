@@ -1,6 +1,6 @@
 <?php
 
-class AboutusAndSlider extends CI_Model {
+class AboutSliderContact extends CI_Model {
 
     public function __construct() {
         parent::__construct();
@@ -9,7 +9,7 @@ class AboutusAndSlider extends CI_Model {
     
     function search() {
         $this->db->select('*');
-        $this->db->from('aboutus');
+        $this->db->from('aboutslidercontactdata');
         $query = $this->db->get();
         return $query->result();
     }
@@ -17,6 +17,6 @@ class AboutusAndSlider extends CI_Model {
     function update($data, $id) {
         
         $this->db->where('idabout', $id);
-        $this->db->update('aboutus', $data);
+        $this->db->update('aboutslidercontactdata', $data);
     }
 }

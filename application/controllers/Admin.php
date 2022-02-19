@@ -23,13 +23,14 @@ class Admin extends BaseController {
                 
             }
 
-            $this->data['cities'] = $this->Cities->search();
-            $this->data['aboutusAndSliderText'] = $this->AboutusAndSlider->search();
+            $this->data['aboutusAndSliderText'] = $this->AboutSliderContact->search();
             // var_dump($this->data['cleaners']);
-            $this->load->view('head');
+            $this->load->view('head', $this->data);
             $this->load->view('navigation');
-            $this->load->view('admin/body', $this->data);
-            $this->load->view('admin/editAboutAndSliderTextForm', $this->data);
+            $this->load->view('admin/body');
+            ($_SESSION["userrights"] != "admin") 
+                ? '' : $this->load->view('admin/editAboutAndSliderTextForm');
+            $this->load->view('about');
             $this->load->view('footer');
         }
         
@@ -83,8 +84,6 @@ class Admin extends BaseController {
             else {
                 $this->data['cleaners'] = $this->Cleaners->search();
             }
-
-            $this->data['cities'] = $this->Cities->search();
             // var_dump($this->data['cleaners']);
         }
         $this->load->view('admin/allCleaners', $this->data);
@@ -103,7 +102,6 @@ class Admin extends BaseController {
                 }
                 else {
                     $this->data['cleaners'] = $this->Cleaners->search();
-                    $this->data['cities'] = $this->Cities->search();
                     $this->load->view('admin/allCleaners', $this->data);
                 }
             }
@@ -118,8 +116,11 @@ class Admin extends BaseController {
             'title' => $this->input->post('title'),
             'aboutustext' => $this->input->post('aboutustext'),
             'slidertext' => $this->input->post('slidertext'),
+            'contactaddress' => $this->input->post('contactaddress'),
+            'contactphone' => $this->input->post('contactphone'),
+            'contactemail' => $this->input->post('contactemail'),
         );
-        $this->AboutusAndSlider->update($data, $id);
+        $this->AboutSliderContact->update($data, $id);
 
         if($this->db->affected_rows() > 0) {
             echo  'Updated..';

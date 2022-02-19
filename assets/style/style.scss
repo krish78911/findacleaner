@@ -1,32 +1,56 @@
-$backgroundColor: #DFCFBE;
-$textColor: black;
+$lightGray: rgb(94, 94, 94);
+$textColor: $lightGray;
 $fontSize: 24px;
 $border: black;
 $logoGreen: #AAC551;
-$logoPink: #CE2DA7;
+$logoPink: #ff77a0;
+$backgroundColor: #bf9574;
 
 @mixin form-style {
+    span {
+        color: $textColor;
+    }
     input, select, button {
         width: 100%;
-        padding: 10px;
         margin-bottom: 5px;
+        border-radius: 0px;
+        border: 1px solid $textColor;
+    }
+    select, button {
+        padding: 10px;
+    }
+    input {
+        padding: 8px;
     }
     button {
-        background-color: $logoGreen;
+        background-color: $backgroundColor;
         color: white;
         border: none;
         font-size: 18px; font-weight: bold;;
     }
 }
 
+@mixin border-style {
+    border: 1px solid $border;
+}
 @mixin table-style {
+    @include border-style;
     tr:nth-child(odd) {background: rgb(255, 255, 255)}
     tr:nth-child(even) {background: #CCC}
+    td, th {
+        padding: 5px;
+        vertical-align: top;
+    }
 }
 
 body {
     .displayNone {
         display: none;
+    }
+    .headings {
+        color: $textColor;
+        width: 100%;
+        font-size: 24px;
     }
     .navigation {
         margin-bottom: 10px;
@@ -41,7 +65,7 @@ body {
                 font-size: 24px;
                 padding: 0px;
                 span.greenColor {
-                    color: $logoGreen;
+                    color: $backgroundColor;
                 }
                 span.pinkColor {
                     color: $logoPink;
@@ -59,19 +83,13 @@ body {
     .cleanerTableAdmin {
         width: 100%;
         @include table-style;
-        tr {
-            border: 1px outset $border;
-        }
-        td, th {
-            padding: 5px;
-        }
         span {
             cursor: pointer;
         }
     } 
 
-    .advertisementForm {
-        border: 1px outset $border;
+    .advertisementForm, .loginForm {
+        @include border-style;
         label {
             width: 100%;
             text-align: center;
@@ -90,8 +108,15 @@ body {
 
     .aboutus {
         margin-top: 10px;
-        .heading {
-            font-size: 24px;
+        color: white;
+        background-color: $backgroundColor;
+        padding: 20px;
+        .headings {
+            text-align: center;
+            color: white;
+        }
+        .aboutusText {
+            font-size: 16px;
             text-align: center;
         }
     }
@@ -116,9 +141,11 @@ body {
     }
 
     .footer {
-        height: 200px;
-        background-color: $backgroundColor;
         margin-top: 10px;
+        padding: 20px;
+        color: $textColor;
+        font-size: 16px;
+        text-align: center;
     }
 
     // UI
@@ -133,15 +160,12 @@ body {
             color: white;
             padding: 20px;
             font-family: "Helvetica";
+            @include border-style;
         }
     }
     .search {
-        label {
-            width: 100%;
-            font-size: 24px;
-        }
         #searchForm {
-            border: 1px outset $border;
+            @include border-style;
             padding: 5px;
             width: 100%;
             @include form-style();
@@ -152,20 +176,11 @@ body {
     }
     .cleanerTableUser {
         width: 100%;
-        // box-shadow: 0px 0px 3px black;
-        border: 1px outset $border;
         @include table-style;
-        tr {
-            border: 1px outset $border;
-        }
         th {
-            background-color: $logoGreen;
+            background-image: none;
+            background-color: $backgroundColor;
             color: white;
-        }
-        td, th {
-            // border: 1px outset $border;
-            padding: 5px;
-            vertical-align: top;
         }
         span {
             cursor: pointer;
@@ -173,6 +188,10 @@ body {
         span.totalPrice {
             font-size: 25px;
             font-weight: bold;
+        }
+        .sendEmailButton {
+            border: 0px;
+            background-color: $backgroundColor;
         }
     } 
 }

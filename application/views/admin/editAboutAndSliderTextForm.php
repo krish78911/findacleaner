@@ -16,9 +16,7 @@
 					<div class="row">	
 						<div class="col-lg-12">
 							<span>Description</span>
-							<textarea name="aboutustext" placeholder="Description" maxlength="500" required>
-								<?php echo $val->aboutustext ?>
-							</textarea>
+							<textarea name="aboutustext" placeholder="Description" maxlength="1000" required><?php echo $val->aboutustext ?></textarea>
 						</div>
 					</div>
 					<div class="row">	
@@ -26,6 +24,27 @@
 							<span>Slider Text</span>
 							<input type="text" name="slidertext" placeholder="SliderText" maxlength="100" 
 								value="<?php echo $val->slidertext ?>" required />
+						</div>
+					</div>
+					<div class="row">	
+						<div class="col-lg-12">
+							<span>Footer Address</span>
+							<input type="text" name="contactaddress" placeholder="contact address" maxlength="100" 
+								value="<?php echo $val->contactaddress ?>" required />
+						</div>
+					</div>
+					<div class="row">	
+						<div class="col-lg-12">
+							<span>Footer Phone</span>
+							<input type="text" name="contactphone" placeholder="contact phone" maxlength="100" 
+								value="<?php echo $val->contactphone ?>" required />
+						</div>
+					</div>
+					<div class="row">	
+						<div class="col-lg-12">
+							<span>Footer E-Mail</span>
+							<input type="text" name="contactemail" placeholder="contact email" maxlength="100" 
+								value="<?php echo $val->contactemail ?>" required />
 						</div>
 					</div>
 					<div class="row">	

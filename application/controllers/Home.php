@@ -15,13 +15,10 @@ class Home extends BaseController {
 
     public function index() {
         $this->data['cleaners'] = $this->Cleaners->search();
-        $this->data['cities'] = $this->Cities->search();
-        $this->data['aboutus'] = $this->AboutusAndSlider->search();
-        $this->data['slidertext'] = $this->AboutusAndSlider->search();
-        $this->load->view('head');
+        $this->load->view('head', $this->data);
         $this->load->view('navigation');
-        $this->load->view('slider', $this->data);
-        $this->load->view('home', $this->data);
+        $this->load->view('slider');
+        $this->load->view('home');
         $this->load->view('about');
         $this->load->view('footer');   
     }
@@ -34,8 +31,7 @@ class Home extends BaseController {
         $this->metersquare = $postData['metersquare'];
         $this->kitchencleaning = $postData['kitchencleaning'];
         $this->bathroomcleaning = $postData['bathroomcleaning'];
-
-        echo $postData['bathroomcleaning'];
+        
         $this->data['cleaners'] = $this->Cleaners->searchWhere($postData);
         $this->load->view('getCleanersAndPrices'
             , $this->data
