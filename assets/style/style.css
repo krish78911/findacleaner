@@ -1,6 +1,12 @@
 body .displayNone {
     display: none;
 }
+body .warningMessage {
+    color: red !important;
+}
+body .successMessage {
+    color: green !important;
+}
 body .headings {
     color: #5e5e5e;
     width: 100%;

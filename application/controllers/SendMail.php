@@ -30,8 +30,12 @@ class SendMail extends BaseController {
             $message .= "<p>E-Mail: ".$details['email']."<p>";
             $message .= "<p>Phone: ".$details['phone']."<p>";
             $message .= "<p>Requirements<p>";
+            $message .= "<p>One or multiple dates between these dates depends on amount of work.<p>";
             $message .= "<p>From Date: ".$details['fromdate']."<p>";
             $message .= "<p>To Date: ".$details['todate']."<p>";
+            $message .= "<p>Choose time between these hours<p>";
+            $message .= "<p>From Time (00:00 to 24:00): ".$details['fromtime']."<p>";
+            $message .= "<p>To Time (00:00 to 24:00): ".$details['totime']."<p>";
             $message .= "<p>city: ".$details['city']."<p>";
             $message .= "<p>vacuuming: ".$details['vacuuming']."<p>";
             $message .= "<p>moping: ".$details['moping']."<p>";

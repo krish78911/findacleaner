@@ -17,7 +17,7 @@
 					<div class="col-md-6 col-lg-6">
 						<span>E-Mail</span>
 						<input type="email" name="email" placeholder="Email" maxlength="50" id="checkEmail" required />
-						<span id="emailExistMessage"></span>
+						<span id="emailExistMessage" class="warningMessage"></span>
 					</div>
 					<div class="col-md-6 col-lg-6">
 						<span>Password</span>

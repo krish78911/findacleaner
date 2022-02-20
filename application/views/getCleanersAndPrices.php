@@ -72,7 +72,7 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">Contact</h4>
-                            <span class="messageSubmitted"></span>
+                            <span class="messageSubmitted successMessage"></span>
                         </div>
                         <div class="modal-body">
                             <form action="'.base_url('SendMail/sendEmail').'" method="POST" class="sendMessageForm">
@@ -80,10 +80,18 @@
                                 <input type="text" name="lastname" placeholder="Last Name" maxlength="50" required />
                                 <input type="email" name="email" placeholder="E-Mail" maxlength="50" required />
                                 <input type="number" name="phone" placeholder="Phone" maxlength="50" required />
+                                <span>(Dates) Between these dates I need cleaner</span><br>
                                 <span>From Date</span>
                                 <input type="text" name="fromdate" class="datepickerFrom" placeholder="From Date" required />
-                                <span>To Date</span>
+                                <span>To Date (select same date as from date if you need cleaner for 1 day)</span>
                                 <input type="text" name="todate" class="datepickerTo" placeholder="To Date" required />
+
+                                <span>(Hours) Between these hours I need cleaner</span><br>
+                                <span>From Time (00:00 to 24:00)</span>
+                                <input type="number" name="fromtime" placeholder="00:00 to 24:00" />
+                                <span>To Time (00:00 to 24:00)</span>
+                                <input type="number" name="totime" placeholder="00:00 to 24:00" />
+
                                 <input type="text" name="city" value="'.$this->city.'" class="displayNone" />
                                 <input type="text" name="advertemail" value="'.$val->email.'" class="displayNone" />
                                 <input type="text" name="metersquare" value="'.$this->metersquare.'" class="displayNone" />

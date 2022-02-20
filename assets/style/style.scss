@@ -56,6 +56,12 @@ body {
     .displayNone {
         display: none;
     }
+    .warningMessage {
+        color: red !important;
+    }
+    .successMessage {
+        color: green !important;
+    }
     .headings {
         color: $textColor;
         width: 100%;
