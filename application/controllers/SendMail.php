@@ -25,28 +25,71 @@ class SendMail extends BaseController {
         
         // Compose a simple HTML email message
         $message = '<html><body>';
-            $message .= "<p>First Name: ".$details['firstname']."<p>";
-            $message .= "<p>Last Name: ".$details['lastname']."<p>";
-            $message .= "<p>E-Mail: ".$details['email']."<p>";
-            $message .= "<p>Phone: ".$details['phone']."<p>";
-            $message .= "<p>Requirements<p>";
-            $message .= "<p>One or multiple dates between these dates depends on amount of work.<p>";
-            $message .= "<p>From Date: ".$details['fromdate']."<p>";
-            $message .= "<p>To Date: ".$details['todate']."<p>";
-            $message .= "<p>Choose time between these hours<p>";
-            $message .= "<p>From Time (00:00 to 24:00): ".$details['fromtime']."<p>";
-            $message .= "<p>To Time (00:00 to 24:00): ".$details['totime']."<p>";
-            $message .= "<p>city: ".$details['city']."<p>";
-            $message .= "<p>vacuuming: ".$details['vacuuming']."<p>";
-            $message .= "<p>moping: ".$details['moping']."<p>";
-            $message .= "<p>metersquare: ".$details['metersquare']."<p>";
-            $message .= "<p>kitchencleaning: ".$details['kitchencleaning']."<p>";
-            $message .= "<p>bathroomcleaning: ".$details['bathroomcleaning']."<p>";
-            $message .= "<p>Total Price: €".$details['totalprice']."<p>";
+            $message .= "<p style='font-size: 20px;'><strong>Request From:</strong><p>";
+            $message .= "<p><strong>First Name: </strong>".$details['firstname']."<p>";
+            $message .= "<p><strong>Last Name: </strong>".$details['lastname']."<p>";
+            $message .= "<p><strong>E-Mail: </strong>".$details['email']."<p>";
+            $message .= "<p><strong>Phone: </strong>".$details['phone']."<p>";
+            $message .= "<p style='font-size: 20px;'><strong>Requirements Below:</strong><p>";
+            $message .= "<p><strong>Choose One or Multiple dates between these dates depending on amount of work.</strong><p>";
+            $message .= "<p><strong>From Date: </strong>".$details['fromdate']."<p>";
+            $message .= "<p><strong>To Date: </strong>".$details['todate']."<p>";
+            $message .= "<p><strong>Choose time between these hours.</strong><p>";
+            $message .= "<p><strong>From Time (0 to 24): </strong>".$details['fromtime']."<p>";
+            $message .= "<p><strong>To Time (0 to 24): </strong>".$details['totime']."<p>";
+            $message .= "<p><strong>City: </strong>".$details['city']."<p>";
+            $message .= "<p><strong>Vacuuming: </strong>".$details['vacuuming']."<p>";
+            $message .= "<p><strong>Moping: </strong>".$details['moping']."<p>";
+            $message .= "<p><strong>Metersquare &#13217; : </strong>".$details['metersquare']."<p>";
+            $message .= "<p><strong>Kitchencleaning: </strong>".$details['kitchencleaning']."<p>";
+            $message .= "<p><strong>Bathroomcleaning: </strong>".$details['bathroomcleaning']."<p>";
+            $message .= "<p><strong>Total Price: </strong>€".$details['totalprice']."<p>";
         $message .= '</body></html>';
-        
-        // Sending email
+
+        // Sending email to advertiser
         if(mail($to, $subject, $message, $headers)){
+            echo 'Your mail has been sent successfully.';
+        } else{
+            echo 'Unable to send email. Please try again.';
+        }
+
+        $messageToUser = '<html><body>';
+            $messageToUser .= "<p><strong>Copy of email sent to advertiser</strong><p>";
+            $messageToUser .= "<p style='font-size: 20px;'><strong>Request From:</strong><p>";
+            $messageToUser .= "<p><strong>First Name: </strong>".$details['firstname']."<p>";
+            $messageToUser .= "<p><strong>Last Name: </strong>".$details['lastname']."<p>";
+            $messageToUser .= "<p><strong>E-Mail: </strong>".$details['email']."<p>";
+            $messageToUser .= "<p><strong>Phone: </strong>".$details['phone']."<p>";
+            $messageToUser .= "<p style='font-size: 20px;'><strong>Requirements Below:</strong><p>";
+            $messageToUser .= "<p><strong>Choose One or Multiple dates between these dates depending on amount of work.</strong><p>";
+            $messageToUser .= "<p><strong>From Date: </strong>".$details['fromdate']."<p>";
+            $messageToUser .= "<p><strong>To Date: </strong>".$details['todate']."<p>";
+            $messageToUser .= "<p><strong>Choose time between these hours.</strong><p>";
+            $messageToUser .= "<p><strong>From Time (0 to 24): </strong>".$details['fromtime']."<p>";
+            $messageToUser .= "<p><strong>To Time (0 to 24): </strong>".$details['totime']."<p>";
+            $messageToUser .= "<p><strong>City: </strong>".$details['city']."<p>";
+            $messageToUser .= "<p><strong>Vacuuming: </strong>".$details['vacuuming']."<p>";
+            $messageToUser .= "<p><strong>Moping: </strong>".$details['moping']."<p>";
+            $messageToUser .= "<p><strong>Metersquare &#13217; : </strong>".$details['metersquare']."<p>";
+            $messageToUser .= "<p><strong>Kitchencleaning: </strong>".$details['kitchencleaning']."<p>";
+            $messageToUser .= "<p><strong>Bathroomcleaning: </strong>".$details['bathroomcleaning']."<p>";
+            $messageToUser .= "<p><strong>Total Price: </strong>€".$details['totalprice']."<p>";
+        $messageToUser .= '</body></html>';
+
+        // Sending Email to User
+        $toUser = $details['email'];
+        $fromAdvertiser = $details['advertemail'];
+        $subjectUser = 'Copy of Cleaning Request sent to Advertiser';
+
+        // To send HTML mail, the Content-type header must be set
+        $headersUser  = 'MIME-Version: 1.0' . "\r\n";
+        $headersUser .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        // Create email headers
+        $headersUser .= 'From: '.$fromAdvertiser."\r\n".
+            'Reply-To: '.$fromAdvertiser."\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        if(mail($toUser, $subjectUser, $messageToUser, $headersUser)){
             echo 'Your mail has been sent successfully.';
         } else{
             echo 'Unable to send email. Please try again.';

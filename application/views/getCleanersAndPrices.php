@@ -87,10 +87,24 @@
                                 <input type="text" name="todate" class="datepickerTo" placeholder="To Date" required />
 
                                 <span>(Hours) Between these hours I need cleaner</span><br>
-                                <span>From Time (00:00 to 24:00)</span>
-                                <input type="number" name="fromtime" placeholder="00:00 to 24:00" />
-                                <span>To Time (00:00 to 24:00)</span>
-                                <input type="number" name="totime" placeholder="00:00 to 24:00" />
+                                <span>From Time (0 to 24)</span>
+                                <select name="fromtime" required>
+                                    <option value="">select</option>
+                                ';
+                                    for($i=0; $i<=24; $i++) {
+                                        echo '<option>'.$i.':00</option>';
+                                    }
+                                echo '
+                                </select>
+                                <span>To Time (0 to 24)</span>
+                                <select name="totime" required>
+                                    <option value="">select</option>
+                                ';
+                                    for($i=0; $i<=24; $i++) {
+                                        echo '<option>'.$i.':00</option>';
+                                    }
+                                echo '
+                                </select>
 
                                 <input type="text" name="city" value="'.$this->city.'" class="displayNone" />
                                 <input type="text" name="advertemail" value="'.$val->email.'" class="displayNone" />
