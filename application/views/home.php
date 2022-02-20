@@ -31,12 +31,13 @@
 $(document).ready(function () {
     var start = 0;
     var last = 5;
-    var total = '<?php echo count($cleanersAll); ?>';
+    var total = '<?php echo $cleanersAll; ?>';
     var limit = 5;
     var dataPost = '';
 
     $("#searchForm").on('submit', function (e)
     {
+        $('#searchForm button').append('<span>Loading..</span>');
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
         //postData.push({limit: limit, start: start});
@@ -50,7 +51,7 @@ $(document).ready(function () {
                     {
                         $('.getCleanersAndPrices').html(data);
                         $('.next').show();
-                        
+                        $('#searchForm button span').remove();
                         /*
                         setTimeout(function () {
                             $('.getCleanersAndPrices').html(data);
@@ -74,6 +75,7 @@ $(document).ready(function () {
         $('.next').hide();
     }
     $('.prev').on('click', function() {
+        $(this).append('<a>Loading..</a>');
         start = start - 5;
         last = last - 5;
         if(start <= 0) {
@@ -88,12 +90,13 @@ $(document).ready(function () {
             data: dataPost,
             success: function(data) {
                 $('.getCleanersAndPrices').html(data);
+                $('.prev a').remove();
             }
         });
 
     });
     $('.next').on('click', function() {
-        
+        $(this).append('<a>Loading..</a>');
         start = start + 5;
         last = last + 5;
         if(start > 0) {
@@ -108,6 +111,7 @@ $(document).ready(function () {
             data: dataPost,
             success: function(data) {
                 $('.getCleanersAndPrices').html(data);
+                $('.next a').remove();
             }
         });
     });

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Find a Cleaner</title>
+<link rel="shortcut icon" href="<?php echo base_url('assets/images/title.jpg'); ?>">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

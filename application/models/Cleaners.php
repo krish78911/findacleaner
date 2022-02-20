@@ -44,7 +44,13 @@ class Cleaners extends CI_Model {
             $this->db->limit($limit, $start);
         }
         $query = $this->db->get();
-        return $query->result();
+
+        if($all) {
+            return $query->result();
+        } else {
+            return $query->num_rows();
+        }
+        
     }
 
     function searchWhereEmail($email) {

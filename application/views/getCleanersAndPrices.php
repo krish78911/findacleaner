@@ -13,7 +13,7 @@
             echo "<td>".($key+1)."</td>";
             echo "<td>".$val->lastname." , ".$val->firstname."</td>";
             echo "<td>";
-                echo "<p><strong>Vacuuming: </strong>Price:€".$val->vcpricepermeter."/&#13217;</p>";
+                echo "<p><strong>Vacuuming: Price:€</strong>".$val->vcpricepermeter."/&#13217;</p>";
                 echo "<p><strong>Moping </strong>";
                     echo ($val->moping == "Yes") ? 
                         "<span class='glyphicon glyphicon-ok'></span>, <strong>Price: </strong>€".$val->mopingpricepermeter."/&#13217;"
@@ -78,10 +78,11 @@
                         </div>
                         <div class="modal-body">
                             <form action="'.base_url('SendMail/sendEmail').'" method="POST" class="sendMessageForm">
-                                <input type="text" name="firstname" placeholder="First Name" required />
-                                <input type="text" name="lastname" placeholder="Last Name" required />
-                                <input type="email" name="email" placeholder="E-Mail" required />
-                                <input type="text" name="phone" placeholder="Phone" required />
+                                <input type="text" name="firstname" placeholder="First Name" maxlength="50" required />
+                                <input type="text" name="lastname" placeholder="Last Name" maxlength="50" required />
+                                <input type="email" name="email" placeholder="E-Mail" maxlength="50" required />
+                                <input type="number" name="phone" placeholder="Phone" maxlength="50" required />
+                                <input type="text" name="city" value="'.$this->city.'" class="displayNone" />
                                 <input type="text" name="advertemail" value="'.$val->email.'" class="displayNone" />
                                 <input type="text" name="metersquare" value="'.$this->metersquare.'" class="displayNone" />
                                 <input type="text" name="vacuuming" value="Yes" class="displayNone" />
