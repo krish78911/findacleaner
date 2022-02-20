@@ -1,6 +1,5 @@
 <table class="cleanerTableUser">
     <tr>
-        <th></th>
         <th>Lastname, Firstname</th>
         <th>Services</th>
         <th>Total Price</th>
@@ -10,7 +9,6 @@
         // echo count($cleanersAll);
         foreach($cleaners as $key => $val) {
             echo "<tr>";
-            echo "<td>".($key+1)."</td>";
             echo "<td>".$val->lastname." , ".$val->firstname."</td>";
             echo "<td>";
                 echo "<p><strong>Vacuuming: Price:€</strong>".$val->vcpricepermeter."/&#13217;</p>";

@@ -1,5 +1,8 @@
 <div class="container">
     <div class="row">
+        <div class="col-md-5 col-lg-4 search">
+            <?php include 'searchForm.php'; ?>
+        </div>
         <div class="col-md-7 col-lg-8">
             <div class="getCleanersAndPrices">
                 <?php include 'getCleanersAndPrices.php'; ?>
@@ -20,9 +23,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-5 col-lg-4 search">
-            <?php include 'searchForm.php'; ?>
         </div>
     </div>
 </div>
@@ -78,12 +78,6 @@ $(document).ready(function () {
         $(this).append('<a>Loading..</a>');
         start = start - 5;
         last = last - 5;
-        if(start <= 0) {
-            $('.prev').hide();
-        }
-        if(last < total) {
-            $('.next').show();
-        }
         $.ajax({  
             type: 'POST',  
             url: '<?php echo base_url('Home/findCleaners/') ?>'+limit+'/'+start, 
@@ -91,6 +85,12 @@ $(document).ready(function () {
             success: function(data) {
                 $('.getCleanersAndPrices').html(data);
                 $('.prev a').remove();
+                if(start <= 0) {
+                    $('.prev').hide();
+                }
+                if(last < total) {
+                    $('.next').show();
+                }
             }
         });
 
@@ -99,12 +99,6 @@ $(document).ready(function () {
         $(this).append('<a>Loading..</a>');
         start = start + 5;
         last = last + 5;
-        if(start > 0) {
-            $('.prev').show();
-        }
-        if(last >= total) {
-            $('.next').hide();
-        }
         $.ajax({  
             type: 'POST',  
             url: '<?php echo base_url('Home/findCleaners/') ?>'+limit+'/'+start, 
@@ -112,6 +106,12 @@ $(document).ready(function () {
             success: function(data) {
                 $('.getCleanersAndPrices').html(data);
                 $('.next a').remove();
+                if(start > 0) {
+                    $('.prev').show();
+                }
+                if(last >= total) {
+                    $('.next').hide();
+                }
             }
         });
     });

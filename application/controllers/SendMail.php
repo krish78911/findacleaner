@@ -36,7 +36,7 @@ class SendMail extends BaseController {
             $message .= "<p>metersquare: ".$details['metersquare']."<p>";
             $message .= "<p>kitchencleaning: ".$details['kitchencleaning']."<p>";
             $message .= "<p>bathroomcleaning: ".$details['bathroomcleaning']."<p>";
-            $message .= "<p>Total Price: ".$details['totalprice']."<p>";
+            $message .= "<p>Total Price: €".$details['totalprice']."<p>";
         $message .= '</body></html>';
         
         // Sending email
