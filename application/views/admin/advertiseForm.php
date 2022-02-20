@@ -141,10 +141,15 @@
 								$('#emailExistMessage').html(data);
 							} else {
 								$('.advertiseSuccessOrFail').html(data);
-									setInterval(function(){ 
+								var url = '<?php echo base_url('Admin') ?>';
+								$(location).attr('href',url);
+								
+								/*
+								setInterval(function(){ 
 									var url = '<?php echo base_url('Admin') ?>';
 									$(location).attr('href',url);
-								}, 100);	
+								}, 100);
+								*/	
 							}
                         },
                         error: function (jqXHR, textStatus, errorThrown)

@@ -80,6 +80,10 @@
                                 <input type="text" name="lastname" placeholder="Last Name" maxlength="50" required />
                                 <input type="email" name="email" placeholder="E-Mail" maxlength="50" required />
                                 <input type="number" name="phone" placeholder="Phone" maxlength="50" required />
+                                <span>From Date</span>
+                                <input type="text" name="fromdate" class="datepickerFrom" placeholder="From Date" required />
+                                <span>To Date</span>
+                                <input type="text" name="todate" class="datepickerTo" placeholder="To Date" required />
                                 <input type="text" name="city" value="'.$this->city.'" class="displayNone" />
                                 <input type="text" name="advertemail" value="'.$val->email.'" class="displayNone" />
                                 <input type="text" name="metersquare" value="'.$this->metersquare.'" class="displayNone" />
@@ -108,6 +112,28 @@
         }
     ?>
 </table>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+$( function() {
+    $( ".datepickerFrom" ).datepicker({ 
+        dateFormat: 'yy-mm-dd',
+        minDate: new Date(),
+        onSelect: function(selectedDate) {
+            var nextDay = new Date(selectedDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            $(".datepickerTo").datepicker("option","minDate", nextDay);
+        }
+    });
+    $( ".datepickerTo" ).datepicker({ 
+        dateFormat: 'yy-mm-dd',
+        minDate: new Date(),
+    });
+} );
+</script>
 
 <script>
 $(document).ready(function () {

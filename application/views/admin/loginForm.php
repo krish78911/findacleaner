@@ -28,14 +28,21 @@
                         success: function (data, textStatus, jqXHR)
                         {
 							if(data == 'Yes') {
+                                var url = '<?php echo base_url('Admin') ?>';
+                                $(location).attr('href',url);
+                                /*
                                 setInterval(function(){ 
                                     var url = '<?php echo base_url('Admin') ?>';
                                     $(location).attr('href',url);
 							    }, 100);
+                                */
                             } else {
+                                $('#wrongEmailOrPassword').html(data)
+                                /*
                                 setInterval(function(){ 
                                     $('#wrongEmailOrPassword').html(data)
-							    }, 5000);  
+							    }, 5000); 
+                                */ 
                             }
 								
                         },

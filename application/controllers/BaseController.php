@@ -52,6 +52,7 @@ class BaseController extends CI_Controller {
             STYLING
             TEST
             LANGUAGES
+            MOPING KITCHEN BATHROOM ON YES SHOW PRICE INPUT NOT WORKING ON LIVE WEBSITE
         */
     }
 }

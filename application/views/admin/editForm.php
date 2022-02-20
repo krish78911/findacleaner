@@ -150,10 +150,12 @@
 				url: 'Admin/deleteAdvertisement/'+$(this).attr('id'),
 				type: "POST",
 				success: function(data){
-					//alert('11');
+					$('.allCleaners').html(data);
+					/*
 					setTimeout(function () {
 						$('.allCleaners').html(data);
 					}, 1000);
+					*/
 				},
 				error: function(data){
 					//alert("error!");

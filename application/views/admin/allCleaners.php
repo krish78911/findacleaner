@@ -19,11 +19,22 @@
 						<span class='glyphicon glyphicon-chevron-down'></span>
 					</td>
 				";
-				echo "
-					<td class='delete' id=".$val->id.">
-						<span class='glyphicon glyphicon-remove'></span>
-					</td>
-				";
+				if($_SESSION["userrights"] == 'admin') {
+					echo "
+						<td class='delete' id=".$val->id.">
+							<span class='glyphicon glyphicon-remove'></span>
+						</td>
+					";
+				} else {
+					echo "
+						<td class='' id=".$val->id.">
+							<a href='".base_url('Admin/deleteAdvertisement/'.$val->id)."'>
+							<span class='glyphicon glyphicon-remove'></span>
+							</a>
+						</td>
+					";
+				}
+				
 				echo "</tr>";
 
 				echo "<tr> <td colspan='6' class='detail'>";
