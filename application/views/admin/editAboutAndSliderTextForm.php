@@ -73,6 +73,9 @@
                         success: function (data, textStatus, jqXHR)
                         {
 							$('.aboutAndSliderTextUpdated').html(data);
+							setTimeout(function () {
+                                $('.aboutAndSliderTextUpdated').empty()
+                            }, 2000);
                         },
                         error: function (jqXHR, textStatus, errorThrown)
                         {

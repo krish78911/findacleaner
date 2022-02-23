@@ -31,7 +31,7 @@
 $(document).ready(function () {
     var start = 0;
     var last = 5;
-    var total = '<?php echo $cleanersAll; ?>';
+    var total = '<?php echo count($cleanersAll); ?>';
     var limit = 5;
     var dataPost = '';
 
@@ -50,7 +50,11 @@ $(document).ready(function () {
                     success: function (data, textStatus, jqXHR)
                     {
                         $('.getCleanersAndPrices').html(data);
-                        $('.next').show();
+                        if(last >= total) {
+                            $('.next').hide();
+                        } else {
+                            $('.next').show();
+                        }
                         $('#searchForm button span').remove();
                         /*
                         setTimeout(function () {
