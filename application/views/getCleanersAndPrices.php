@@ -6,7 +6,6 @@
         <th>Contact</th>
     </tr>
     <?php
-        // echo count($cleanersAll);
         foreach($cleaners as $key => $val) {
             echo "<tr>";
             echo "<td>".$val->lastname." , ".$val->firstname."</td>";

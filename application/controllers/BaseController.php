@@ -16,8 +16,6 @@ class BaseController extends CI_Controller {
 		
         session_start();
 
-        //echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
-
         $this->load->library(array('upload', 'image_lib', 'calendar', 'email', 'pagination', 'unit_test')); //load necessary libraries
         $this->load->database();
         $this->load->helper(array('url', 'form', 'html', 'directory', 'file')); //load necessary helpers
@@ -31,28 +29,5 @@ class BaseController extends CI_Controller {
         $this->data['aboutus'] = $this->AboutSliderContact->search();
         $this->data['slidertext'] = $this->AboutSliderContact->search();
         $this->data['contact'] = $this->AboutSliderContact->search();
-
-        /*
-            -SEARCH CONDITION FOR PRICE
-            -SEND EMAIL
-            -LOGOUT
-            -ON EDIT EMAIL AND PASSWORD, MANAGE LOGIN, LOGOUT
-            -SHOW MOPING, KITCHEN, BATHROOM PRICE INPUT IF YES SELECTED
-            -LOGIN, use newly created login form
-            -REGISTER (check if username exists), if session exists then submit to admin, else to register
-            -ON USER DELETE logout
-            -PUT LABEL ABOVE FORM INPUTS (edit form, login form)
-            -EDIT FORM SHOW HIDE PRICE INPUTS NOT WORKING
-            -AJAX WORKS ONLY ONCE ERROR
-            -CHECK IF PRICE INPUTS EMPTY THEN ENTER 0
-            -CITIES FROM TABLE
-            -ADMIN SHOW ALL BUT EDIT ONLY USERRIGHT
-            -ABOUT US FROM DB AND EDIT, DELETE
-            PAGINATION
-            STYLING
-            TEST
-            LANGUAGES
-            MOPING KITCHEN BATHROOM ON YES SHOW PRICE INPUT NOT WORKING ON LIVE WEBSITE
-        */
     }
 }

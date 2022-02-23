@@ -10,7 +10,6 @@ class Admin extends BaseController {
 
     public function __construct() {
         parent::__construct();
-        // echo $_SESSION['email']." -- ".$_SESSION['password']." :: ".$_SESSION['loggedin'];
     }
 
     public function index() {
