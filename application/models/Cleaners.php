@@ -41,7 +41,7 @@ class Cleaners extends CI_Model {
         }
         $this->db->order_by("id", "asc");
         if($all) {
-            $this->db->limit($limit, $start);
+            //$this->db->limit($limit, $start);
         }
         $query = $this->db->get();
 

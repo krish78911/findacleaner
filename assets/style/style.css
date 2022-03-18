@@ -1,3 +1,7 @@
+body .loadingText {
+    color: white;
+    margin: 20px;
+}
 body .displayNone {
     display: none;
 }
@@ -119,9 +123,10 @@ body .aboutus {
 body .aboutus .headings {
     text-align: center;
     color: white;
+    font-weight: bold;
 }
 body .aboutus .aboutusText {
-    font-size: 16px;
+    font-size: 22px;
     text-align: center;
 }
 body .adminAboutAndSliderText {

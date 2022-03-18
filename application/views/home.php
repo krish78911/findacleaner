@@ -7,6 +7,7 @@
             <div class="getCleanersAndPrices">
                 <?php include 'getCleanersAndPrices.php'; ?>
             </div>
+            <!--
             <div class="prevNextButtons">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -23,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </div>
 </div>
@@ -32,12 +34,14 @@ $(document).ready(function () {
     var start = 0;
     var last = 5;
     var total = '<?php echo count($cleanersAll); ?>';
+    
     var limit = 5;
     var dataPost = '';
 
     $("#searchForm").on('submit', function (e)
     {
-        $('#searchForm button').append('<span>Loading..</span>');
+
+        $('#searchForm button').append('<span class="loadingText">Loading..</span>');
         var postData = $(this).serializeArray();
         var formURL = $(this).attr("action");
         //postData.push({limit: limit, start: start});

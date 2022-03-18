@@ -6,6 +6,9 @@
         <th>Contact</th>
     </tr>
     <?php
+        if(count($cleaners) < 1) {
+            echo "<tr><td colspan='4'><span class='totalPrice'>no cleaners found</span></td></tr>";
+        }
         foreach($cleaners as $key => $val) {
             echo "<tr>";
             echo "<td>".$val->lastname." , ".$val->firstname."</td>";
